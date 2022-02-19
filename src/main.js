@@ -3,12 +3,9 @@ import data from './data/pokemon/pokemon.js';
 
 const pokemon = data.pokemon;
 
-<<<<<<< HEAD
 const btnMobile = document.getElementById('btn-mobile')
 
 let sectionCardsPokemon = document.querySelector("card-pokemon")
-=======
->>>>>>> 18db669c9d2c2da433e1a2ded239a1f38a159348
 let cardSmall = document.getElementById('card-pokemon')
 let showPokemonBig = document.getElementById('card-pokemon-big')
 
