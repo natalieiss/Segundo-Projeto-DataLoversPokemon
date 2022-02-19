@@ -1,26 +1,60 @@
 :root{
     --pokedex: #D63025;
     --cards: #C4C4C4;
+    --shadow: rgba(0, 0, 0, 0.527);
+    --line: rgba(0, 0, 0, .05);
+    --pattern: rgba(94, 92, 90, 0.397)
 }
 
 *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: none;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
 }
+
 .body{
   background: black;
 }
+
 .container-main{
-    background-color: black;
-    display: flex;
-    flex-direction: column;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
 
 }
 
 .header-menu{
-    height: 80px ;
-    background: white;
+  height: 80px ;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1%;
+}
+
+.menu {
+  display: flex;
+  gap: .5rem;
+}
+
+.menu .link{
+  display: block;
+  padding: .5rem;
+}
+
+.link:hover {
+  background: var(--line);
+}
+
+.link{
+  color: black;
+}
+
+.btn-mobile{
+  display: none;
 }
 
 .img-header{
@@ -43,32 +77,67 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
 
+.paragraph-big {
+  padding: 10px;
+  padding-top: 1%;
+  margin: auto;
+  text-justify: auto;
 }
 
 .big-card{
     margin-right: 1%;
     width: 46vw;
-    align-items: center;
+    height:  70vh;
     background: var(--cards);
     overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: stretch;
+    padding: 1rem;
+}
+
+.paragraph-big-about{
+  width: 80%;
+  padding-top: 2%;
+  margin: auto;
+  text-align: justify;
+  margin-bottom: 2%;
+}
+
+.image-big{
+  border-style: groove;
+  border-image: round;
+  border-radius: 10%;
+}
+
+.pattern{
+  background-color: var(--pattern);
+  margin: 4px;
+  height: auto;
+  width: 150px;
+  border-style: groove;
+  border-image: round;
+  border-radius: 3%;
 }
 
 .margin{
-    border-radius: 10px;
-    margin-top: 15px;
+  border-radius: 10px;
+  margin-top: 15px;
 }
 
 .pokedex{
-    margin-left: 1%;
-    height:  70vh;
-    width: 46vw;
-    background: var(--pokedex);
-    display: flex;
-    align-items: center;
-    justify-items: center;
-    flex-direction: column;
-    overflow-y: auto;
+  margin-left: 1%;
+  height:  70vh;
+  width: 46vw;
+  background: var(--pokedex);
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  flex-direction: column;
+  overflow-y: auto;
 }
 
 .card-pokemon-section{
@@ -81,16 +150,16 @@
 }
 
 .card-pokemon{
-    border-radius: 10px;
-    margin: 5px;
-    background: var(--cards);
-    width: 170px;
-    height: 220px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-items: center;
-    text-align: center;
+  border-radius: 10px;
+  margin: 5px;
+  background: var(--cards);
+  width: 170px;
+  height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
 }
 
 .paragraph-card{
@@ -98,9 +167,11 @@
 }
 
 .baseboard{
-    text-align: center;
-    text-justify: center;
-    background-color: black;
+  text-align: center;
+  text-justify: center;
+  background-color: black;
+  color: white;
+  padding-top: 20px;
 }
 
 @media only screen and (max-width: 600px) {
@@ -113,7 +184,72 @@
 
   .header-menu{
 
+  }
 
+  .menu{
+    display: block;
+    position: absolute;
+    width: 50vh;
+    top: 80px;
+    right: 0;
+    background: white;
+    box-shadow: -2rem 2rem 2rem var(--shadow);
+    transition: .6s;
+    height: 0px;
+    z-index: 1000;
+    visibility: hidden;
+    overflow-y: hidden;
+  }
+
+  .menu .link{
+   padding: 1rem 0;
+   margin: 0 1rem;
+   border-bottom: 2px solid var(--line);
+  }
+
+  .btn-mobile{
+    display: flex;
+    padding: .5rem;
+    font-size: 1rem;
+    background: none;
+    cursor: pointer;
+    gap: .5rem;
+  }
+
+  .hamburguer{
+    border-top: 2px solid;
+    width: 20px;
+  }
+
+  .hamburguer::after, .hamburguer::before{
+    content: '';
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: currentColor;
+    margin-top: 5px;
+    transition: .3s;
+    position: relative;
+  }
+
+  .nav-options.active .hamburguer{
+    border-top-color: transparent;
+  }
+
+  .nav-options.active .hamburguer::before{
+    transform: rotate(135deg);
+
+  }
+
+  .nav-options.active .hamburguer::after{
+    transform: rotate(-135deg);
+    top: -7px;
+  }
+
+  .nav-options.active .menu{
+    visibility: visible;
+    height: calc(90vh - 80px);
+    overflow-y: auto;
   }
 
   .big-card{
@@ -123,8 +259,9 @@
   .pokedex{
     height: 70vh;
     width: 98%;
-}
+  }
 
-.baseboard{
-  margin-top: auto;
+  .baseboard{
+    margin-top: auto;
+  }
 }
