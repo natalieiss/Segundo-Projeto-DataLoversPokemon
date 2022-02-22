@@ -1,15 +1,17 @@
-//import { example } from './data.js';
-import data from './data/pokemon/pokemon.js';
+import data from './data/pokemon/pokemon.js'
+
 import {
+  filterByType,
   orderData
-} from './data.js'
+} from "./data.js"
+
 
 const pokemon = data.pokemon;
 
 const btnMobile = document.getElementById('btn-mobile')
 const selectOrder = document.querySelector('#select-order')
 
-let sectionCardsPokemon = document.querySelector("[data-section]")
+let sectionCardsPokemon = document.querySelector("[data-section]") //quando coloca em colchetes ele pega todos os dados da section inclusive tags, elementos, atributos, texto e id
 let cardSmall = document.getElementById('card-pokemon')
 let showPokemonBig = document.getElementById('card-pokemon-big')
 
@@ -41,6 +43,7 @@ const smallCardPokemon = (arrPokemon) => {
 }
 let arrPokemon = pokemon
 smallCardPokemon(arrPokemon)
+const filterTypes = document.querySelector('#type')
 
 selectOrder.addEventListener("change", (e) => {
   let changeOrder = e.target.value
@@ -50,18 +53,28 @@ selectOrder.addEventListener("change", (e) => {
   return smallCardPokemon(arrPokemonOrder)
 })
 
+filterTypes.addEventListener("change", () => {
+  if (filterTypes.value !== "") {
+    if (filterTypes.value === "filtrar") {
+      smallCardPokemon(data.pokemon)
+    }
+    arrPokemon = filterByType(data.pokemon, filterTypes.value)
+  }
+  smallCardPokemon(arrPokemon)
+})
+
 function apearBigCardPokemon(data) {
   showPokemonBig.textContent = ''
   const onePokemon = arrPokemon[Number(data)]
 
   let resistantType = ""
-  const resistantAtribute = onePokemon.resistant
+  const resistantAtribute = onePokemon.resistant //trocar as const para letras maiúsculas
   for (let resistantValue of resistantAtribute) {
     resistantType += " " + resistantValue + "/"
   }
 
   let weaknessesType = ""
-  const weaknessesAtribute = onePokemon.weaknesses
+  const weaknessesAtribute = onePokemon.weaknesses //trocar as const para letras maiúsculas
   for (let weaknessesValue of weaknessesAtribute) {
     weaknessesType += " " + weaknessesValue + "/"
   }
@@ -124,7 +137,7 @@ function apearBigCardPokemon(data) {
       if (valuePrevEvolution['prev-evolution']) {
         const prevPrevEvolution = valuePrevEvolution['prev-evolution']
         for (let valuePrevEvolutionTwo of prevPrevEvolution) {
-          showPokemonBig.insertAdjacentHTML('beforeend', `<div class="pattern"><p class="paragraph-big"><b>Number: </b>${valuePrevEvolutionTwo['num']}</p> <p class="paragraph-big">Name: ${valuePrevEvolutionTwo['name']}</p> <p class="paragraph-big"><b>Candy cost: </b>${valuePrevEvolutionTwo['candy-cost']}</p></div>`)
+          showPokemonBig.insertAdjacentHTML('beforeend', `<div class="pattern"><p class="paragraph-big"><b>Number: </b>${valuePrevEvolutionTwo['num']}</p> <p class="paragraph-big"><b>Name: </b>${valuePrevEvolutionTwo['name']}</p> <p class="paragraph-big"><b>Candy cost: </b>${valuePrevEvolutionTwo['candy-cost']}</p></div>`)
           if (valuePrevEvolutionTwo["evolution-item"]) {
             showPokemonBig.insertAdjacentHTML('beforeend', `<div class="pattern"><p class="paragraph-big"><b>Evolution item: </b>${valuePrevEvolutionTwo["evolution-item"].name}</p></div>`)
           }
