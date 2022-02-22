@@ -35,6 +35,14 @@
   </header>
 
   <section id="filters" class="filters">
+    <legend>Order:</legend>
+    <select id="select-order">
+      <option id="order-num" value="num" selected>Pokémon Number</option>
+      <option id="order-az" value="name-az">A-Z</option>
+      <option id="order-za" value="name-za">Z-A</option>
+      <option id="order-cp" value="max-smaller-cp">Descending CP</option>
+      <option id="order-cp-smaller-max" value="smaller-max-cp">Growing CP</option>
+    </select>
     <legend>Pokemon filter:</legend>
     <select>
       <option id="candys">Candy Cost</option>
@@ -44,6 +52,7 @@
       <!--colocar tipo de grid "onselect"-->
     </select>
   </section>
+
   <div class="container-main">
     <main id="pokemons-search" class="main">
 

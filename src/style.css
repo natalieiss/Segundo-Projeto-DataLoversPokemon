@@ -87,16 +87,16 @@
 }
 
 .big-card{
-    margin-right: 1%;
-    width: 46vw;
-    height:  70vh;
-    background: var(--cards);
-    overflow-y: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: stretch;
-    padding: 1rem;
+  margin-right: 1%;
+  width: 46vw;
+  height:  70vh;
+  background: var(--cards);
+  overflow-y: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: stretch;
+  padding: 1rem;
 }
 
 .paragraph-big-about{
@@ -252,8 +252,22 @@
     overflow-y: auto;
   }
 
+  .filters{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .main{
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+
   .big-card{
-    display: none;
+    height: 70vh;
+    width: 98%;
   }
 
   .pokedex{
