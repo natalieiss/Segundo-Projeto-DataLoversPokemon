@@ -1,11 +1,15 @@
-//import { example } from './data.js';
-import data from './data/pokemon/pokemon.js';
+import data from './data/pokemon/pokemon.js'
+
+import {
+  filterByType
+} from "./data.js"
+
 
 const pokemon = data.pokemon;
 
 const btnMobile = document.getElementById('btn-mobile')
 
-let sectionCardsPokemon = document.querySelector("[data-section]")
+let sectionCardsPokemon = document.querySelector("[data-section]") //quando coloca em colchetes ele pega todos os dados da section inclusive tags, elementos, atributos, texto e id
 let cardSmall = document.getElementById('card-pokemon')
 let showPokemonBig = document.getElementById('card-pokemon-big')
 
@@ -21,35 +25,45 @@ function toggleMenu(event) {
 btnMobile.addEventListener("click", toggleMenu)
 btnMobile.addEventListener("touchstart", toggleMenu)
 
-const smallCardPokemon = () => {
-  let i = 0
-  for (let onePokemon of pokemon) {
+
+
+const smallCardPokemon = (arrPokemon) => {
+  cardSmall.textContent = ""
+  arrPokemon.forEach((onePokemon, index) => {
+
     let saveType = ""
     for (let oneTypePokemon of onePokemon.type) {
       saveType += (" " + oneTypePokemon.toUpperCase())
     }
-    cardSmall.insertAdjacentHTML("beforeend", `<button class="card-pokemon" data-item="${i}" > <div>
-    <img data-item="${i}" src="${onePokemon.img}" alt="Imagem Pokemon" class="img-pokemon">
-    <p data-item="${i}" class="paragraph-card">${onePokemon.name.toUpperCase()}</p>
-    <p data-item="${i}" class="paragraph-card">${onePokemon.num}</p> <p data-item="${i}" class="paragraph-card">${saveType}</p> </div> </button>`)
-    i += 1
-  }
+    cardSmall.insertAdjacentHTML("beforeend", `<button class="card-pokemon" data-item="${index}" > <div>
+      <img data-item="${index}" src="${onePokemon.img}" alt="Imagem Pokemon" class="img-pokemon">
+        <p data-item="${index}" class="paragraph-card">${onePokemon.name.toUpperCase()}</p>
+        <p data-item="${index}" class="paragraph-card">${onePokemon.num}</p> <p data-item="${index}" class="paragraph-card">${saveType}</p> </div> </button>`)
+  })
 }
 
-smallCardPokemon()
+const filterTypes = document.querySelector('#type')
+
+let arrPokemon = pokemon
+filterTypes.addEventListener("change", () => {
+  if (filterTypes.value !== "") {
+    arrPokemon = filterByType(data.pokemon, filterTypes.value)
+  }
+  smallCardPokemon(arrPokemon)
+})
 
 function apearBigCardPokemon(data) {
   showPokemonBig.textContent = ''
-  const onePokemon = pokemon[Number(data)]
+  const onePokemon = arrPokemon[Number(data)]
 
   let resistantType = ""
-  const resistantAtribute = onePokemon.resistant
+  const resistantAtribute = onePokemon.resistant //trocar as const para letras maiúsculas
   for (let resistantValue of resistantAtribute) {
     resistantType += " " + resistantValue + "/"
   }
 
   let weaknessesType = ""
-  const weaknessesAtribute = onePokemon.weaknesses
+  const weaknessesAtribute = onePokemon.weaknesses //trocar as const para letras maiúsculas
   for (let weaknessesValue of weaknessesAtribute) {
     weaknessesType += " " + weaknessesValue + "/"
   }
@@ -85,7 +99,7 @@ function apearBigCardPokemon(data) {
     for (let evolutionValue of nextEvolutionValue) {
       showPokemonBig.insertAdjacentHTML('beforeend', `<div class="pattern"><p class="paragraph-big"><b>Next Evolution Number: </b>${evolutionValue['num']}</p> <p class="paragraph-big"><b>Next Evolution Name: </b>${evolutionValue['name']}</p> <p class="paragraph-big"><b>Next Evolution Candy cost: </b></b>${evolutionValue['candy-cost']}</p></div>`)
       if (evolutionValue["evolution-item"]) {
-        showPokemonBig.insertAdjacentHTML('beforeend', `<div class="pattern"><p class="paragraph-big"><b>Evolution item name: </b>${evolutionValue["evolution-item"].name}</p> <p class="paragraph-big"><b>Evolution item image: </b>${evolutionValue["evolution-item"].img}</p></div>`)
+        showPokemonBig.insertAdjacentHTML('beforeend', `<div class="pattern"><p class="paragraph-big"><b>Evolution item name: </b>${evolutionValue["evolution-item"].name}</p></div>`)
       }
 
       if (evolutionValue['next-evolution']) {
@@ -94,7 +108,7 @@ function apearBigCardPokemon(data) {
           showPokemonBig.insertAdjacentHTML('beforeend', `<div class="pattern"><p class="paragraph-big"><b>Next Evolution Number: </b>${evolutionValueTwo['num']}</p> <p class="paragraph-big"><b>Net Evolution Name: </b>${evolutionValueTwo['name']}</p> <p class="paragraph-big"><b>Next Evolution Candy Cost: </b>${evolutionValueTwo['candy-cost']}</p></div>`)
 
           if (evolutionValueTwo["evolution-item"]) {
-            showPokemonBig.insertAdjacentHTML('beforeend', `<div class="pattern"><p class="paragraph-big"><b>Evolution item name: </b>${evolutionValueTwo["evolution-item"].name}</p> <p class="paragraph-big"><b>Evolution item image: </b>${evolutionValueTwo["evolution-item"].img}</p></div>`)
+            showPokemonBig.insertAdjacentHTML('beforeend', `<div class="pattern"><p class="paragraph-big"><b>Evolution item name: </b>${evolutionValueTwo["evolution-item"].name}</p></div>`)
           }
         }
 
@@ -107,14 +121,14 @@ function apearBigCardPokemon(data) {
     for (let valuePrevEvolution of prevEvolution) {
       showPokemonBig.insertAdjacentHTML('beforeend', `<div class="pattern"><p class="paragraph-big"><b>Number: </b>${valuePrevEvolution['num']}</p> <p class="paragraph-big"><b>Name: </b>${valuePrevEvolution['name']}</p> <p class="paragraph-big"><b>Candy cost: </b>${valuePrevEvolution['candy-cost']}</p></div>`)
       if (valuePrevEvolution["evolution-item"]) {
-        showPokemonBig.insertAdjacentHTML('beforeend', `<div class="pattern"><p class="paragraph-big"><b>Evolution item name: </b>${valuePrevEvolution["evolution-item"].name}</p> <p class="paragraph-big"><b>Evolution item image: </b>${valuePrevEvolution["evolution-item"].img}</p></div>`)
+        showPokemonBig.insertAdjacentHTML('beforeend', `<div class="pattern"><p class="paragraph-big"><b>Evolution item name: </b>${valuePrevEvolution["evolution-item"].name}</p></div>`)
       }
       if (valuePrevEvolution['prev-evolution']) {
         const prevPrevEvolution = valuePrevEvolution['prev-evolution']
         for (let valuePrevEvolutionTwo of prevPrevEvolution) {
-          showPokemonBig.insertAdjacentHTML('beforeend', `<div class="pattern"><p class="paragraph-big"><b>Number: </b>${valuePrevEvolutionTwo['num']}</p> <p class="paragraph-big">Name: ${valuePrevEvolutionTwo['name']}</p> <p class="paragraph-big"><b>Candy cost: </b>${valuePrevEvolutionTwo['candy-cost']}</p></div>`)
+          showPokemonBig.insertAdjacentHTML('beforeend', `<div class="pattern"><p class="paragraph-big"><b>Number: </b>${valuePrevEvolutionTwo['num']}</p> <p class="paragraph-big"><b>Name: </b>${valuePrevEvolutionTwo['name']}</p> <p class="paragraph-big"><b>Candy cost: </b>${valuePrevEvolutionTwo['candy-cost']}</p></div>`)
           if (valuePrevEvolutionTwo["evolution-item"]) {
-            showPokemonBig.insertAdjacentHTML('beforeend', `<div class="pattern"><p class="paragraph-big"><b>Evolution item: </b>${valuePrevEvolutionTwo["evolution-item"].name}</p> <p class="paragraph-big"><b>Evolution item image: </b>${valuePrevEvolutionTwo["evolution-item"].img}</p></div>`)
+            showPokemonBig.insertAdjacentHTML('beforeend', `<div class="pattern"><p class="paragraph-big"><b>Evolution item: </b>${valuePrevEvolutionTwo["evolution-item"].name}</p></div>`)
           }
         }
       }
@@ -131,10 +145,10 @@ function apearBigCardPokemon(data) {
 
 }
 
-sectionCardsPokemon.addEventListener("click", (e) => {
+sectionCardsPokemon.addEventListener("click", (e) => { //função sem parâmetro ja procura logo um evento
   // consulta o elemento que foi alvo do click
   // mesmo o evento estando atribuido à section
-  const { target } = e;
+  const { target } = e; //so guarda onde clicou se clicou no imagem ou no paragrafo
 
   // verifica se tem o atributo data-item
   const dataItem = target.dataset.item;
