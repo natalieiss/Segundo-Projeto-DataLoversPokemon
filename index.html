@@ -34,41 +34,39 @@
 
   </header>
 
-  <section id="type" class="filters">
+  <section id="selection" class="filters">
     <legend>Pokemon types:</legend>
-    <select>
-      <option value="filtrar" selected>Types</option>
-      <option value="grass">&#127793; Planta</option>
-      <option value="fire">&#128293; Fogo</option>
-      <option value="water">&#128167; Água</option>
-      <option value="poison">&#128128; Venenoso</option>
-      <option value="bug">&#128030; Inseto</option>
-      <option value="eletric">&#9889; Elétrico</option>
-      <option value="ground">&#127757; Terra</option>
-      <option value="fighting">&#129355; Lutador</option>
-      <option value="psychic">&#127853; Psíquico</option>
-      <option value="normal">&#128059; Normal</option>
-      <option value="rock">&#128507; Pedra</option>
-      <option value="flying">&#128640; Voador</option>
-      <option value="ghost">&#128123; Fantasma</option>
-      <option value="ice">&#129482; Gelo</option>
-      <option value="dragon">&#128009; Dragão</option>
-      <option value="steel">&#129522; Metálico</option>
-      <option value="dark">&#127761; Noturno</option>
-      <option value="fairy">&#129498; Fada</option>
+    <select id="type">
+      <option value="filtrar" selected>Filter</option>
+      <option value="bug" class="pokemon-selection">Bug</option>
+      <option value="dark" class="pokemon-selection">Dark</option>
+      <option value="dragon" class="pokemon-selection">Dragon</option>
+      <option value="electric" class="pokemon-selection">Electric</option>
+      <option value="fairy" class="pokemon-selection">Fairy</option>
+      <option value="fighting" class="pokemon-selection">Fighting</option>
+      <option value="fire" class="pokemon-selection">Fire</option>
+      <option value="flying" class="pokemon-selection">Flying</option>
+      <option value="ghost" class="pokemon-selection">Ghost</option>
+      <option value="grass" class="pokemon-selection">Grass</option>
+      <option value="ground" class="pokemon-selection">Ground</option>
+      <option value="ice" class="pokemon-selection">Ice</option>
+      <option value="normal" class="pokemon-selection">Normal</option>
+      <option value="poison" class="pokemon-selection">Poison</option>
+      <option value="psychic" class="pokemon-selection">Psychic</option>
+      <option value="rock" class="pokemon-selection">Rock</option>
+      <option value="steel" class="pokemon-selection">Steel</option>
+      <option value="water" class="pokemon-selection">Water</option>
+    </select>
+    <legend>Order:</legend>
+    <select id="select-order">
+      <option id="order-num" value="num" selected>Pokémon Number</option>
+      <option id="order-az" value="name-az">A-Z</option>
+      <option id="order-za" value="name-za">Z-A</option>
+      <option id="order-cp" value="max-smaller-cp">Descending CP</option>
+      <option id="order-cp-smaller-max" value="smaller-max-cp">Growing CP</option>
     </select>
   </section>
 
-  <section id="filters" class="filters">
-    <legend>Pokemon filter:</legend>
-    <select>
-      <option id="candys">Candy Cost</option>
-      <!--os botões vao ser para os filtros dos tipos do pokemon, spawn chance, candy cost (não precisa ser botão só aparecer)-->
-      <option id="pokemons-type">Pokemon Type</option>
-      <option id="spawn-chance">Spawn Chance</option>
-      <!--colocar tipo de grid "onselect"-->
-    </select>
-  </section>
   <div class="container-main">
     <main id="pokemons-search" class="main">
 
