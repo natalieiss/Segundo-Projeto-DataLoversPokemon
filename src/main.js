@@ -5,12 +5,12 @@ import {
   orderData
 } from "./data.js"
 
-
 const pokemon = data.pokemon;
-
 const btnMobile = document.getElementById('btn-mobile')
 const selectOrder = document.querySelector('#select-order')
+const inputSearch = document.getElementById('input-search')
 
+let filterTypes = document.querySelector('#type')
 let sectionCardsPokemon = document.querySelector("[data-section]") //quando coloca em colchetes ele pega todos os dados da section inclusive tags, elementos, atributos, texto e id
 let cardSmall = document.getElementById('card-pokemon')
 let showPokemonBig = document.getElementById('card-pokemon-big')
@@ -28,44 +28,73 @@ btnMobile.addEventListener("click", toggleMenu)
 btnMobile.addEventListener("touchstart", toggleMenu)
 
 const smallCardPokemon = (arrPokemon) => {
-  cardSmall.textContent = ""
+  cardSmall.innerHTML = ""
+
   arrPokemon.forEach((onePokemon, index) => {
     let saveType = ""
     for (let oneTypePokemon of onePokemon.type) {
       saveType += (" " + oneTypePokemon.toUpperCase())
     }
-    console.log(index)
     cardSmall.insertAdjacentHTML("beforeend",
       `<button class="card-pokemon" data-item="${index}" >
-      <div>
-        <img data-item="${index}" src="${onePokemon.img}" alt="Imagem Pokemon" class="img-pokemon">
-        <p data-item="${index}" class="paragraph-card">${onePokemon.name.toUpperCase()}</p>
-        <p data-item="${index}" class="paragraph-card">${onePokemon.num}</p>
-        <p data-item="${index}" class="paragraph-card">${saveType}</p>
-      </div>
-    </button>`)
+        <div>
+          <img data-item="${index}" src="${onePokemon.img}" alt="Imagem Pokemon" class="img-pokemon">
+          <p data-item="${index}" class="paragraph-card">${onePokemon.name.toUpperCase()}</p>
+          <p data-item="${index}" class="paragraph-card">${onePokemon.num}</p>
+          <p data-item="${index}" class="paragraph-card">${saveType}</p>
+        </div>
+      </button>`)
   })
 }
-let arrPokemon = pokemon
-smallCardPokemon(arrPokemon)
-const filterTypes = document.querySelector('#type')
 
-selectOrder.addEventListener("change", (e) => {
-  let changeOrder = e.target.value
-  console.log(changeOrder)
-  const arrPokemonOrder = orderData(arrPokemon, changeOrder)
-  console.log(arrPokemonOrder)
-  smallCardPokemon(arrPokemonOrder)
+
+
+// let typedName = ""
+
+inputSearch.addEventListener("keydown", (e) => {
+
+  var key = e.button || e.code;
+  if (key == "Enter") {
+
+    alert('carregou enter o valor digitado foi: ' + e.code + " " + inputSearch.value);
+
+  }
 })
+
+let arrPokemon
 
 filterTypes.addEventListener("change", () => {
   if (filterTypes.value !== "") {
     if (filterTypes.value === "filtrar") {
-      smallCardPokemon(data.pokemon)
+      smallCardPokemon(pokemon)
+      arrPokemon = []
+    } else {
+      const pokemonFilterType = (pokemonList, typesSelect) => {
+        return filterByType(pokemonList, typesSelect.value)
+      }
+      smallCardPokemon(pokemonFilterType(data.pokemon, filterTypes))
+      arrPokemon = pokemonFilterType(data.pokemon, filterTypes)
     }
-    arrPokemon = filterByType(data.pokemon, filterTypes.value)
+  } else {
+    smallCardPokemon(pokemon)
+
   }
-  smallCardPokemon(arrPokemon)
+})
+
+
+selectOrder.addEventListener("change", (e) => {
+  let changeOrder = e.target.value
+  console.log(changeOrder)
+  if (arrPokemon.length === 0) {
+    let arrPokemonOrder = orderData(data.pokemon, changeOrder)
+    console.log("se arr pokemon for vazio", arrPokemonOrder)
+    smallCardPokemon(arrPokemonOrder)
+  } else {
+    console.log(arrPokemon)
+    let arrPokemonOrder = orderData(arrPokemon, changeOrder)
+    console.log("se arr for o array filtrado", arrPokemonOrder)
+    smallCardPokemon(arrPokemonOrder)
+  }
 })
 
 function apearBigCardPokemon(data) {
@@ -153,7 +182,9 @@ function apearBigCardPokemon(data) {
     )
   }
 
-  showPokemonBig.insertAdjacentHTML('beforeend', `<p class="paragraph-big>Evolution: ${onePokemon.evolution.candy}</p>`)
+  showPokemonBig.insertAdjacentHTML('beforeend', `
+  <p class="paragraph-big>Evolution: ${onePokemon.evolution.candy}</p>`
+  )
 
   if (onePokemon.evolution['next-evolution']) {
     const nextEvolutionValue = onePokemon.evolution['next-evolution']
