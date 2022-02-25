@@ -24,9 +24,10 @@ export const orderData = (arrPokemon, orderType) => {
     })
   } else if (orderType === "num") {
     return arrPokemon.sort((a, b) => (a['num']) - (b['num']))
+  } else if (orderType === "spawn-chance") {
+    return arrPokemon.sort((a, b) => (b['spawn-chance']) - (a['spawn-chance']))
   }
 }
-
 
 export const filterByType = (data, selectFilter) =>
   data.filter((pokemon) => pokemon.type.includes(selectFilter))
