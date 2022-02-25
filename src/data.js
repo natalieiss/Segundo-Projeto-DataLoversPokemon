@@ -13,6 +13,17 @@ export const orderData = (arrPokemon, orderType) => {
         return -1
       }
     })
+  } else if (orderType === "name-za") {
+    return arrPokemon.sort((a, b) => {
+      if (a['name'] > b['name']) {
+        return -1
+      }
+      if (a['name'] < b['name']) {
+        return 1
+      }
+    })
+  } else if (orderType === "num") {
+    return arrPokemon.sort((a, b) => (a['num']) - (b['num']))
   }
 }
 

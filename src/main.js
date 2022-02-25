@@ -64,18 +64,21 @@ inputSearch.addEventListener("keydown", (e) => {
 smallCardPokemon(pokemon)
 
 let arrPokemon = []
+let arrPokemonOrder = []
 
 filterTypes.addEventListener("change", () => {
   if (filterTypes.value !== "") {
     console.log("entrei no filtro")
     if (filterTypes.value === "filtrar") {
       smallCardPokemon(pokemon)
+      arrPokemonOrder = []
       arrPokemon = []
       console.log("entrei no filtrar e apaguei o conteudo de arrPokemon idependente de ele estar vazio ou não", arrPokemon)
     } else {
       const pokemonFilterType = (pokemonList, typesSelect) => {
         return filterByType(pokemonList, typesSelect.value)
       }
+      arrPokemonOrder = []
       smallCardPokemon(pokemonFilterType(data.pokemon, filterTypes))
       arrPokemon = pokemonFilterType(data.pokemon, filterTypes)
       console.log("filtrei e mudei o arrPokemon que estava vazio", arrPokemon)
@@ -85,17 +88,17 @@ filterTypes.addEventListener("change", () => {
   }
 })
 
-let arrPokemonOrder
-
 selectOrder.addEventListener("change", (e) => {
   let changeOrder = e.target.value
   console.log(changeOrder)
   if (arrPokemon.length === 0) {
+    arrPokemonOrder = []
     console.log("ArrayPokemon -entrei em ordenar mas não fui filtrado antes", arrPokemon)
-    let arrPokemonOrder = orderData(data.pokemon, changeOrder)
+    arrPokemonOrder = orderData(data.pokemon, changeOrder)
     console.log("O array ordenado fica assim: ", arrPokemonOrder)
     smallCardPokemon(arrPokemonOrder)
   } else {
+    arrPokemonOrder = []
     console.log("ArrayPokemon -entrei em oprdenar e fui filtrado antes, então estou menor mas ordenado", arrPokemon)
     console.log(arrPokemon)
     arrPokemonOrder = orderData(arrPokemon, changeOrder)
@@ -105,9 +108,18 @@ selectOrder.addEventListener("change", (e) => {
 })
 
 function apearBigCardPokemon(data) {
-  showPokemonBig.textContent = ''
+  showPokemonBig.innerHTML = ''
+  let onePokemon
 
-  const onePokemon = arrPokemon[Number(data)]
+  if (arrPokemon.length === 0 && arrPokemonOrder.length === 0) {
+    onePokemon = pokemon[Number(data)]
+  } else if (arrPokemon.length !== 0 && arrPokemonOrder.length === 0) {
+    onePokemon = arrPokemon[Number(data)]
+  } else if (arrPokemon.length !== 0 && arrPokemonOrder.length !== 0) {
+    onePokemon = arrPokemonOrder[Number(data)]
+  } else if (arrPokemon.length === 0 && arrPokemonOrder !== 0) {
+    onePokemon = arrPokemonOrder[Number(data)]
+  }
 
   let resistantType = ""
   const resistantAtribute = onePokemon.resistant //trocar as const para letras maiúsculas
@@ -302,4 +314,3 @@ sectionCardsPokemon.addEventListener("click", (e) => {
     apearBigCardPokemon(dataItem)
   }
 });
-
