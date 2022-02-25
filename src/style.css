@@ -86,12 +86,21 @@
   text-justify: auto;
 }
 
+.mysterious-pokemon{
+  width: 90%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+
+}
+
 .big-card{
   margin-right: 1%;
   width: 46vw;
   height:  70vh;
   background: var(--cards);
   overflow-y: auto;
+  overflow-x: hidden;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -275,3 +284,5 @@
     margin-top: auto;
   }
 }
+
+
