@@ -2,11 +2,11 @@
 <html>
 
 <head>
-  <link rel="icon" sizes="10x16" href="./img/favicon.png">
+  <link rel="icon" sizes="10x16" href="./img/pokedexfavicon.png">
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="Author" content="Natalie Silva e Mônica Guimarães">
+  <meta name="Author" content="Natalie Silva and Mônica Guimarães">
   <meta name="description" content="Gopedia">
   <title>Gopedia</title>
   <link rel="stylesheet" href="style.css" />
@@ -20,8 +20,8 @@
         <span id="hamburguer" class="hamburguer"></span>
       </button>
       <ul id="menu" class="menu">
-        <li><a href="/" class="link">Pokémon GO</a></li>
-        <li><a href="/" class="link">Como Jogar</a></li>
+        <li><a href="https://pokemongolive.com/en/" class="link">Pokémon GO</a></li>
+        <li><a href="https://www.pokemon.com/us/app/pokemon-go/" class="link">How to play</a></li>
         <li><a href="https://tecnoblog.net/responde/como-jogar-pokemon-go-guia-para-iniciantes/" class="link">Aprenda a
             Jogar</a></li>
       </ul>
@@ -29,7 +29,7 @@
   </header>
   <section id="selection" class="filters">
     <input type="search" id="input-search">
-    <legend>Pokemon types:</legend>
+    <legend>Pokémon types:</legend>
     <select id="type">
       <option value="filtrar">Filter</option>
       <option value="bug" class="pokemon-selection">Bug</option>
@@ -54,10 +54,11 @@
     <legend>Order:</legend>
     <select id="select-order">
       <option id="order-num" value="num" selected>Pokémon Number</option>
-      <option id="order-az" value="name-az">A-Z</option>
-      <option id="order-za" value="name-za">Z-A</option>
+      <option id="order-az" value="name-az">A - Z</option>
+      <option id="order-za" value="name-za">Z - A</option>
       <option id="order-cp" value="max-smaller-cp">Descending CP</option>
-      <option id="order-cp-smaller-max" value="smaller-max-cp">Growing CP</option>
+      <option id="order-cp-smaller-max" value="smaller-max-cp">Ascending CP</option>
+      <option value="spawn-chance">Descending spawn chance</option>
     </select>
   </section>
   <div class="container-main">
