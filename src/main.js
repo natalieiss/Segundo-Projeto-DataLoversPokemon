@@ -61,44 +61,52 @@ inputSearch.addEventListener("keydown", (e) => {
   }
 })
 
-let arrPokemon
+smallCardPokemon(pokemon)
+
+let arrPokemon = []
 
 filterTypes.addEventListener("change", () => {
   if (filterTypes.value !== "") {
+    console.log("entrei no filtro")
     if (filterTypes.value === "filtrar") {
       smallCardPokemon(pokemon)
       arrPokemon = []
+      console.log("entrei no filtrar e apaguei o conteudo de arrPokemon idependente de ele estar vazio ou não", arrPokemon)
     } else {
       const pokemonFilterType = (pokemonList, typesSelect) => {
         return filterByType(pokemonList, typesSelect.value)
       }
       smallCardPokemon(pokemonFilterType(data.pokemon, filterTypes))
       arrPokemon = pokemonFilterType(data.pokemon, filterTypes)
+      console.log("filtrei e mudei o arrPokemon que estava vazio", arrPokemon)
     }
   } else {
     smallCardPokemon(pokemon)
-
   }
 })
 
+let arrPokemonOrder
 
 selectOrder.addEventListener("change", (e) => {
   let changeOrder = e.target.value
   console.log(changeOrder)
   if (arrPokemon.length === 0) {
+    console.log("ArrayPokemon -entrei em ordenar mas não fui filtrado antes", arrPokemon)
     let arrPokemonOrder = orderData(data.pokemon, changeOrder)
-    console.log("se arr pokemon for vazio", arrPokemonOrder)
+    console.log("O array ordenado fica assim: ", arrPokemonOrder)
     smallCardPokemon(arrPokemonOrder)
   } else {
+    console.log("ArrayPokemon -entrei em oprdenar e fui filtrado antes, então estou menor mas ordenado", arrPokemon)
     console.log(arrPokemon)
-    let arrPokemonOrder = orderData(arrPokemon, changeOrder)
-    console.log("se arr for o array filtrado", arrPokemonOrder)
+    arrPokemonOrder = orderData(arrPokemon, changeOrder)
+    console.log("se arr for o array filtrado ele fica ordenado assim:", arrPokemonOrder)
     smallCardPokemon(arrPokemonOrder)
   }
 })
 
 function apearBigCardPokemon(data) {
   showPokemonBig.textContent = ''
+
   const onePokemon = arrPokemon[Number(data)]
 
   let resistantType = ""
