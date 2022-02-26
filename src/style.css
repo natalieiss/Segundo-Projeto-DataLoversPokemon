@@ -3,7 +3,8 @@
     --cards: #C4C4C4;
     --shadow: rgba(0, 0, 0, 0.527);
     --line: rgba(0, 0, 0, .05);
-    --pattern: rgba(94, 92, 90, 0.397)
+    --pattern: rgba(94, 92, 90, 0.397);
+    --lighteffect: #FFCC00;
 }
 
 *{
@@ -15,8 +16,25 @@
   text-decoration: none;
 }
 
+@font-face {
+  font-family: 'architectsDaughter';
+  src: url(./fontes/ArchitectsDaughter-Regular.ttf) format('truetype'),url(./fontes/OFL.txt) format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'spaceMono';
+  src: url(./fontes/Space_Mono/SpaceMono-Regular.ttf) format('truetype'),url(./fontes/Space_Mono/OFL.txt) format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .body{
   background: black;
+  font-family: 'architectsDaughter';
+  font-weight: bold;
+  font-size: larger;
 }
 
 .container-main{
@@ -33,6 +51,12 @@
   align-items: center;
   justify-content: space-between;
   padding: 1%;
+}
+
+.logo-image{
+  display: flex;
+  justify-content: left;
+  flex-direction: row;
 }
 
 .menu {
@@ -72,6 +96,10 @@
   align-items: center;
 }
 
+.filter-options{
+  font-family: 'spaceMono';
+}
+
 .main{
   height: auto;
   display: flex;
@@ -91,6 +119,11 @@
   height: 100%;
   display: flex;
   justify-content: center;
+}
+
+.img-style{
+  border-radius: 5%;
+  border-radius:0px 30px 0px 30px;
 
 }
 
@@ -114,6 +147,13 @@
   margin: auto;
   text-align: justify;
   margin-bottom: 2%;
+  font-weight: normal;
+}
+
+.paragraph-big{
+  font-weight: normal;
+  font-size: smaller;
+  font-family: 'spaceMono';
 }
 
 .image-big{
@@ -169,10 +209,21 @@
   align-items: center;
   justify-items: center;
   text-align: center;
+  border-color: var(--pattern);
+  color: black;
+  box-shadow: 0 0 40px 40px var(--pattern) inset, 0 0 0 0 var(--pattern);
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+  cursor: pointer;
+}
+
+.card-pokemon:hover {
+  box-shadow: 0 0 10px 0 var(--lighteffect), 0 0 10px 4px var(--lighteffect);
 }
 
 .paragraph-card{
     margin-top: 4px;
+    font-family: 'spaceMono';
 }
 
 .baseboard{
@@ -180,7 +231,21 @@
   text-justify: center;
   background-color: black;
   color: white;
-  padding-top: 20px;
+  padding-top: 10px;
+  font-size: larger;
+}
+
+.imggit {
+  border-radius: 10%;
+
+}
+
+.imggit:hover {
+  -webkit-filter:yellowscale(100%);
+  transition: 1s;
+  color: #111;
+  background: var(--lighteffect);
+  box-shadow: var(--lighteffect);
 }
 @media only screen and (max-width: 700px){
   .menu{
