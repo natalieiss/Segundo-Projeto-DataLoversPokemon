@@ -1,14 +1,18 @@
-/*export const apearBigCardPokemon = (data) => {
+export const apearBigCardPokemon = (data, showPokemonBig, arrPokemon, arrPokemonOrder, pokemon) => {
   showPokemonBig.innerHTML = ''
   let onePokemon
 
   if (arrPokemon.length === 0 && arrPokemonOrder.length === 0) {
+    console.log("Se não foi filtrado nem ordenado, então o array precisa ser o original para imprimir o bigcard")
     onePokemon = pokemon[Number(data)]
   } else if (arrPokemon.length !== 0 && arrPokemonOrder.length === 0) {
+    console.log("Ele foi filtrado e não ordenado, então recebe o array filtrado para imprimir no big card")
     onePokemon = arrPokemon[Number(data)]
   } else if (arrPokemon.length !== 0 && arrPokemonOrder.length !== 0) {
+    console.log("Foi filtrado e ordenado e recebe o array ordenado, pois independente de ser filtrado ou não a função de ordenação já separa isso")
     onePokemon = arrPokemonOrder[Number(data)]
   } else if (arrPokemon.length === 0 && arrPokemonOrder !== 0) {
+    console.log("foi apenas ordenado, logo recebe o array ordenado para o bigcard")
     onePokemon = arrPokemonOrder[Number(data)]
   }
 
@@ -195,3 +199,4 @@
     </div>`
   )
 }
+
