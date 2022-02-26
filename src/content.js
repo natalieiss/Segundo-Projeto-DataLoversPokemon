@@ -141,7 +141,6 @@ export const apearBigCardPokemon = (data, showPokemonBig, arrPokemon, arrPokemon
 
       }
     }
-
   }
   if (onePokemon.evolution['prev-evolution']) {
     const prevEvolution = onePokemon.evolution['prev-evolution']
