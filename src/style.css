@@ -235,18 +235,19 @@
   font-size: larger;
 }
 
-.imggit {
+.img-git{
   border-radius: 10%;
 
 }
 
-.imggit:hover {
+.img-git:hover{
   -webkit-filter:yellowscale(100%);
   transition: 1s;
   color: #111;
   background: var(--lighteffect);
   box-shadow: var(--lighteffect);
 }
+
 @media only screen and (max-width: 700px){
   .menu{
     display: block;
