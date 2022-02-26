@@ -26,6 +26,10 @@ export const orderData = (arrPokemon, orderType) => {
     return arrPokemon.sort((a, b) => (a['num']) - (b['num']))
   } else if (orderType === "spawn-chance") {
     return arrPokemon.sort((a, b) => (b['spawn-chance']) - (a['spawn-chance']))
+  } else if (orderType === "weaknesses") {
+    return arrPokemon.sort((a, b) =>
+      (a['weaknesses'].length) - (b['weaknesses'].length)
+    )
   }
 }
 
