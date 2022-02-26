@@ -201,6 +201,9 @@ export const apearBigCardPokemon = (data, showPokemonBig, arrPokemon, arrPokemon
 }
 
 export function optionTypesHtml(pokemon) {
-  const pokeType = pokemon.map(({ type }) => [type])
+  const pokeTypeArr = () => {
+    for (let pokeTypeArr of pokemon.type)
+      const pokeType = pokemon.map(({ type }) => [type])
+  }
   console.log(pokeType)
 }
