@@ -141,7 +141,6 @@ export const apearBigCardPokemon = (data, showPokemonBig, arrPokemon, arrPokemon
 
       }
     }
-
   }
   if (onePokemon.evolution['prev-evolution']) {
     const prevEvolution = onePokemon.evolution['prev-evolution']
@@ -200,3 +199,13 @@ export const apearBigCardPokemon = (data, showPokemonBig, arrPokemon, arrPokemon
   )
 }
 
+export function optionTypesHtml(pokemon) {
+  let pokeType = []
+  let arrType
+  for (let onepokemon of pokemon) {
+    arrType = onepokemon.type
+    pokeType = pokeType.concat(arrType)
+  }
+
+  console.log(pokeType)
+}

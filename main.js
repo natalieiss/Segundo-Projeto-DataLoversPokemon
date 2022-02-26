@@ -1,6 +1,7 @@
 import data from './data/pokemon/pokemon.js'
 import {
-  apearBigCardPokemon
+  apearBigCardPokemon,
+  optionTypesHtml
 } from './content.js'
 
 import {
@@ -17,6 +18,8 @@ let filterTypes = document.querySelector('#type')
 let sectionCardsPokemon = document.querySelector("[data-section]") //quando coloca em colchetes ele pega todos os dados da section inclusive tags, elementos, atributos, texto e id
 let cardSmall = document.getElementById('card-pokemon')
 let showPokemonBig = document.getElementById('card-pokemon-big')
+
+optionTypesHtml(pokemon)
 
 function toggleMenu(event) {
   if (event.type === 'touchstart') {
@@ -104,9 +107,13 @@ selectOrder.addEventListener("change", (e) => {
 })
 
 sectionCardsPokemon.addEventListener("click", (e) => {
+  let extensionW = window.screen.width
   const { target } = e;
-  const dataItem = target.dataset.item;
+  const dataItem = target.dataset.item
   if (dataItem) {
     apearBigCardPokemon(dataItem, showPokemonBig, arrPokemon, arrPokemonOrder, pokemon)
+  }
+  if (extensionW <= 600) {
+    window.scrollTo(0, 1000)
   }
 });
