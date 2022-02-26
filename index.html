@@ -14,7 +14,10 @@
 
 <body class="body">
   <header class="header-menu">
-    <a id="logo" href="index.html" class="link"><img alt="GOPEDIA" src="./img/logo.png" class="img-header"></a>
+    <div class="logo-image">
+      <a id="logo" href="index.html" class="link"><img alt="GOPEDIA" src="./img/logo.png" class="img-header"></a>
+      <img src="./img/pikachugif.gif" alt="running pikachu" class="img-pikachu" width="80" />
+    </div>
     <nav id="nav-options" class="nav-options" aria-expanded="false">
       <button id="btn-mobile" class="btn-mobile">Menu
         <span id="hamburguer" class="hamburguer"></span>
@@ -30,7 +33,7 @@
   <section id="selection" class="filters">
     <input type="search" id="input-search">
     <legend>Pokémon types:</legend>
-    <select id="type">
+    <select id="type" class="filter-options">
       <option value="filtrar">Filter</option>
       <option value="bug" class="pokemon-selection">Bug</option>
       <option value="dark" class="pokemon-selection">Dark</option>
@@ -52,7 +55,7 @@
       <option value="water" class="pokemon-selection">Water</option>
     </select>
     <legend>Order:</legend>
-    <select id="select-order">
+    <select id="select-order" class="filter-options">
       <option id="order-num" value="num" selected>Pokémon Number</option>
       <option id="order-az" value="name-az">A - Z</option>
       <option id="order-za" value="name-za">Z - A</option>
@@ -64,7 +67,8 @@
   <div class="container-main">
     <main id="pokemons-search" class="main">
       <section id="card-pokemon-big" class="big-card margin">
-        <div class="mysterious-pokemon"><img src="./img/Untitled-1.png" alt="Pokemon Misterioso" width="100%" />
+        <div class="mysterious-pokemon"><img src="./img/Untitled-1.png" alt="Pokemon Misterioso" width="100%"
+            class="img-style" />
         </div>
       </section>
       <section class="pokedex margin">
@@ -75,11 +79,14 @@
       </section>
     </main>
     <footer class="baseboard">
-      <p>Developed by
+      <p>Developed by Natalie I. S. Santos
         <a href="https://github.com/natalieiss" target="_blank">
-          <strong class="github">@natalieiss</strong>
-        </a><strong>&</strong><a href="https://github.com/MonicaGuimaraes" target="_blank">
-          <strong class="github">@MonicaGuimaraes</strong>
+          <strong class="github"><img src="./img/github.png" alt="imagemgit" class="img-git" width="25" /></strong>
+        </a>and Mônica Guimarães<a href="https://github.com/MonicaGuimaraes" target="_blank">
+          <strong class="github"><img src="./img/github.png" alt="imagemgit" class="img-git" width="25" /></strong>
+          <!--<div> Ícones feitos por <a href="https://www.flaticon.com/br/autores/pixel-perfect" title="Pixel perfect">
+              Pixel perfect </a> from <a href="https://www.flaticon.com/br/" title="Flaticon">www.flaticon.com'</a>*/
+          </div>-->
         </a>
       </p>
     </footer>
