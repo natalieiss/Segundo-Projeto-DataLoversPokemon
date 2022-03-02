@@ -1,29 +1,45 @@
+export const smallCardPokemon = (arrPokemon, cardSmall) => {
+  cardSmall.innerHTML = ""
+
+  arrPokemon.forEach((onePokemon, index) => {
+    let saveType = ""
+    for (let oneTypePokemon of onePokemon.type) {
+      saveType += (" " + oneTypePokemon.toUpperCase())
+    }
+    cardSmall.insertAdjacentHTML("beforeend",
+      `<button class="card-pokemon" data-item="${index}" >
+        <div>
+          <img data-item="${index}" src="${onePokemon.img}" alt="Imagem Pokemon" class="img-pokemon">
+          <p data-item="${index}" class="paragraph-card">${onePokemon.name.toUpperCase()}</p>
+          <p data-item="${index}" class="paragraph-card">${onePokemon.num}</p>
+          <p data-item="${index}" class="paragraph-card">${saveType}</p>
+        </div>
+      </button>`)
+  })
+}
+
 export const apearBigCardPokemon = (data, showPokemonBig, arrPokemon, arrPokemonOrder, pokemon) => {
   showPokemonBig.innerHTML = ''
   let onePokemon
 
   if (arrPokemon.length === 0 && arrPokemonOrder.length === 0) {
-    console.log("Se não foi filtrado nem ordenado, então o array precisa ser o original para imprimir o bigcard")
     onePokemon = pokemon[Number(data)]
   } else if (arrPokemon.length !== 0 && arrPokemonOrder.length === 0) {
-    console.log("Ele foi filtrado e não ordenado, então recebe o array filtrado para imprimir no big card")
     onePokemon = arrPokemon[Number(data)]
   } else if (arrPokemon.length !== 0 && arrPokemonOrder.length !== 0) {
-    console.log("Foi filtrado e ordenado e recebe o array ordenado, pois independente de ser filtrado ou não a função de ordenação já separa isso")
     onePokemon = arrPokemonOrder[Number(data)]
   } else if (arrPokemon.length === 0 && arrPokemonOrder !== 0) {
-    console.log("foi apenas ordenado, logo recebe o array ordenado para o bigcard")
     onePokemon = arrPokemonOrder[Number(data)]
   }
 
   let resistantType = ""
-  const resistantAtribute = onePokemon.resistant //trocar as const para letras maiúsculas
+  const resistantAtribute = onePokemon.resistant
   for (let resistantValue of resistantAtribute) {
     resistantType += " " + resistantValue + "/"
   }
 
   let weaknessesType = ""
-  const weaknessesAtribute = onePokemon.weaknesses //trocar as const para letras maiúsculas
+  const weaknessesAtribute = onePokemon.weaknesses
   for (let weaknessesValue of weaknessesAtribute) {
     weaknessesType += " " + weaknessesValue + "/"
   }
@@ -199,10 +215,18 @@ export const apearBigCardPokemon = (data, showPokemonBig, arrPokemon, arrPokemon
   )
 }
 
-export function optionTypesHtml(pokemon) {
-  const pokeTypeArr = () => {
-    for (let pokeTypeArr of pokemon.type)
-      const pokeType = pokemon.map(({ type }) => [type])
+export function optionTypesHtml(pokemon, filterTypes) {
+  let pokeType = []
+  let arrType
+  for (let onepokemon of pokemon) {
+    arrType = onepokemon.type
+    pokeType = pokeType.concat(arrType)
   }
-  console.log(pokeType)
+  // eslint-disable-next-line no-undef
+  const arrTypes = ([... new Set(pokeType)])
+  arrTypes.forEach((filters) => {
+    filterTypes.insertAdjacentHTML("beforeend",
+      `<option value="${filters}">${filters}</option>`
+    )
+  })
 }
