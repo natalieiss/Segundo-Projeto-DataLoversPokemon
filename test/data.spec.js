@@ -1,4 +1,6 @@
-import { orderData } from '../src/data.js';
+import { it } from 'eslint/lib/rule-tester/rule-tester';
+import { orderData, filterByType } from '../src/data.js';
+
 
 const arrTest = [
   {
@@ -503,6 +505,39 @@ describe('orderData', () => {
         "psychic"
       ]
     })
+  });
+})
+
+/*const arrTestFilter = ['grass', 'poison', 'fire', 'flying', 'water', 'bug', 'normal', 'electric', 'ground', 'fighting', 'psychic', 'rock', 'ice', 'ghost', 'dragon', 'fairy', 'dark', 'steel']*/
+
+describe('filterByType', () => {
+  it('is a function', () => {
+    expect(typeof filterByType).toBe('function')
+  })
+  it('should return [ninetales] for arrTest with fire', () => {
+    expect(filterByType(arrTest, 'fire')).toEqual([{
+      "num": "038",
+      "name": "ninetales",
+      "type": [
+        "fire"
+      ],
+      "spawn-chance": "0.0077",
+      "stats": {
+        "base-attack": "169",
+        "base-defense": "190",
+        "base-stamina": "177",
+        "max-cp": "2279",
+        "max-hp": "151"
+      },
+      "weaknesses": [
+        "water",
+        "ground",
+        "rock"
+      ],
+    }]);
+  });
+  it('Should return "[]" for arrTest with ""', () => {
+    expect(filterByType(arrTest, "")).toEqual([])
   });
 })
 

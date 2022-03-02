@@ -1,3 +1,23 @@
+export const smallCardPokemon = (arrPokemon, cardSmall) => {
+  cardSmall.innerHTML = ""
+  arrPokemon.forEach((onePokemon, index) => {
+    let saveType = ""
+    for (let oneTypePokemon of onePokemon.type) {
+      saveType += (" " + oneTypePokemon.toUpperCase())
+    }
+    cardSmall.insertAdjacentHTML("beforeend",
+      `<button class="card-pokemon" data-item="${index}" >
+        <div>
+          <img data-item="${index}" src="${onePokemon.img}" alt="Imagem Pokemon" class="img-pokemon">
+          <p data-item="${index}" class="paragraph-card">${onePokemon.name.toUpperCase()}</p>
+          <p data-item="${index}" class="paragraph-card">${onePokemon.num}</p>
+          <p data-item="${index}" class="paragraph-card">${saveType}</p>
+        </div>
+      </button>`)
+  })
+}
+
+
 export const apearBigCardPokemon = (data, showPokemonBig, arrPokemon, arrPokemonOrder, pokemon) => {
   showPokemonBig.innerHTML = ''
   let onePokemon
@@ -200,10 +220,22 @@ export const apearBigCardPokemon = (data, showPokemonBig, arrPokemon, arrPokemon
   )
 }
 
-export function optionTypesHtml(pokemon) {
-  const pokeTypeArr = () => {
-    for (let pokeTypeArr of pokemon.type)
-      const pokeType = pokemon.map(({ type }) => [type])
+export function optionTypesHtml(pokemon, typeHtml) {
+  let filterConcat = []
+  const pokeType = pokemon.map(({ type }) => (type))
+
+  pokeType.forEach(function (typeValueOf) { //aqui o forEach já está iterando os dados (iterar pega objetos)
+    filterConcat = filterConcat.concat(typeValueOf)
   }
-  console.log(pokeType)
+  )
+  // eslint-disable-next-line no-undef
+  const filters = [...new Set(filterConcat)] //este comando retira a repetição e imprimir apenas uma vez
+  //os "[]" e os "..." é pra ele ja dar o resultado do set como um array e não objeto, para nao precisar iterar novamente.
+
+  console.log(filters)
+
+  filters.forEach(function (newFilters) {
+    typeHtml.insertAdjacentHTML('beforeend', `<option value="${newFilters}" class="pokemon-selection">${newFilters.charAt(0).toUpperCase() + (newFilters.slice(1, newFilters.legth))}</option>`)
+  })
+
 }

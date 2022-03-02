@@ -33,8 +33,8 @@ export const orderData = (arrPokemon, orderType) => {
   }
 }
 
-export const filterByType = (data, selectFilter) =>
-  data.filter((pokemon) => pokemon.type.includes(selectFilter))
+export const filterByType = (data, selectFilter) => //data é o parametro que corresponde ao array do pokemon
+  data.filter((pokemon) => pokemon.type.includes(selectFilter)) //selectFilter aqui ainda é um parametro
 
 // export const filterSearchName = ()
 
