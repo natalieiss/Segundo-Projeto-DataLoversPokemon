@@ -1,14 +1,13 @@
 import data from './data/pokemon/pokemon.js'
 import {
   apearBigCardPokemon,
-  smallCardPokemon,
-  optionTypesHtml
+  optionTypesHtml,
+  smallCardPokemon
 } from './content.js'
 
 import {
   filterByType,
-  orderData,
-  inputSearchName
+  orderData
 } from "./data.js"
 
 const pokemon = data.pokemon
@@ -36,17 +35,18 @@ btnMobile.addEventListener("click", toggleMenu)
 btnMobile.addEventListener("touchstart", toggleMenu)
 
 
+// let typedName = ""
+inputSearch.addEventListener("keydown", (e) => {
+  var key = e.button || e.code;
+  if (key == "Enter") {
+    alert('carregou enter o valor digitado foi: ' + e.code + " " + inputSearch.value);
+  }
+})
 
 smallCardPokemon(pokemon, cardSmall)
 
 let arrPokemon = []
 let arrPokemonOrder = []
-
-inputSearch.addEventListener("keydown", () => {
-  // var key = e.button || e.code;
-  smallCardPokemon((inputSearchName(pokemon, inputSearch.value)), cardSmall)
-  arrPokemon = inputSearchName(pokemon, inputSearch.value)
-})
 
 filterTypes.addEventListener("change", () => {
   if (filterTypes.value !== "") {

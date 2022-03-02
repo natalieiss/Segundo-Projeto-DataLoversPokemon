@@ -1,6 +1,5 @@
 export const smallCardPokemon = (arrPokemon, cardSmall) => {
   cardSmall.innerHTML = ""
-
   arrPokemon.forEach((onePokemon, index) => {
     let saveType = ""
     for (let oneTypePokemon of onePokemon.type) {
@@ -215,18 +214,19 @@ export const apearBigCardPokemon = (data, showPokemonBig, arrPokemon, arrPokemon
   )
 }
 
-export function optionTypesHtml(pokemon, filterTypes) {
-  let pokeType = []
-  let arrType
-  for (let onepokemon of pokemon) {
-    arrType = onepokemon.type
-    pokeType = pokeType.concat(arrType)
+export function optionTypesHtml(pokemon, typeHtml) {
+  let filterConcat = []
+  const pokeType = pokemon.map(({ type }) => (type))
+
+  pokeType.forEach(function (typeValueOf) {
+    filterConcat = filterConcat.concat(typeValueOf)
   }
+  )
+
   // eslint-disable-next-line no-undef
-  const arrTypes = ([... new Set(pokeType)])
-  arrTypes.forEach((filters) => {
-    filterTypes.insertAdjacentHTML("beforeend",
-      `<option value="${filters}">${filters}</option>`
-    )
+  const filters = [...new Set(filterConcat)]
+  filters.forEach(function (newFilters) {
+    typeHtml.insertAdjacentHTML('beforeend', `<option value="${newFilters}" class="pokemon-selection">${newFilters.charAt(0).toUpperCase() + (newFilters.slice(1, newFilters.legth))}</option>`)
   })
+
 }
