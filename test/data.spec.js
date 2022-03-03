@@ -1,4 +1,4 @@
-import { it } from 'eslint/lib/rule-tester/rule-tester';
+
 import { orderData, filterByType } from '../src/data.js';
 
 
