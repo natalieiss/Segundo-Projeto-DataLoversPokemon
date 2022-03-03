@@ -1,20 +1,6 @@
 @import url(./header.css);
 @import url(./footer.css);
 
-@font-face{
-  font-family: 'architectsDaughter';
-  src: url(./fontes/ArchitectsDaughter-Regular.ttf) format('truetype'),url(./fontes/OFL.txt) format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face{
-  font-family: 'spaceMono';
-  src: url(./fontes/Space_Mono/SpaceMono-Regular.ttf) format('truetype'),url(./fontes/Space_Mono/OFL.txt) format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
 .body{
   background: black;
   font-family: 'architectsDaughter';

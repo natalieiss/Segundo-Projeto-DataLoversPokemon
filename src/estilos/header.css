@@ -16,6 +16,20 @@
   text-decoration: none;
 }
 
+@font-face{
+  font-family: 'architectsDaughter';
+  src: url(../fontes/ArchitectsDaughter-Regular.ttf) format('truetype'),url(../fontes/OFL.txt) format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face{
+  font-family: 'spaceMono';
+  src: url(../fontes/Space_Mono/SpaceMono-Regular.ttf) format('truetype'),url(../fontes/Space_Mono/OFL.txt) format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .header-menu{
   height: 80px ;
   background: white;
