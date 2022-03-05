@@ -5,6 +5,7 @@
   --line: rgba(0, 0, 0, .05);
   --pattern: rgba(94, 92, 90, 0.397);
   --lighteffect: #FFCC00;
+  --shadowred: #d20000;
 }
 
 *{

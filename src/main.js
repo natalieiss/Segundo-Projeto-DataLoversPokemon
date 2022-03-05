@@ -13,7 +13,7 @@ import {
 const pokemon = data.pokemon
 const btnMobile = document.getElementById('btn-mobile')
 const selectOrder = document.querySelector('#select-order')
-const inputSearch = document.getElementById('input-search')
+// const inputSearch = document.getElementById('input-search')
 
 let filterTypes = document.querySelector('#type')
 let sectionCardsPokemon = document.querySelector("[data-section]")
@@ -35,13 +35,11 @@ btnMobile.addEventListener("click", toggleMenu)
 btnMobile.addEventListener("touchstart", toggleMenu)
 
 
-// let typedName = ""
-inputSearch.addEventListener("keydown", (e) => {
-  var key = e.button || e.code;
-  if (key == "Enter") {
-    alert('carregou enter o valor digitado foi: ' + e.code + " " + inputSearch.value);
-  }
-})
+// // let typedName = ""
+// inputSearch.addEventListener("", () => {
+//   inputSearch.value
+
+// })
 
 smallCardPokemon(pokemon, cardSmall)
 
