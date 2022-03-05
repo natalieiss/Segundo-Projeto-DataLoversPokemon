@@ -1,0 +1,27 @@
+.baseboard{
+  text-align: center;
+  text-justify: center;
+  background-color: black;
+  color: white;
+  padding-top: 10px;
+  font-size: larger;
+  font-family: 'architectsDaughter';
+}
+
+.img-git{
+  border-radius: 10%;
+}
+
+.img-git:hover{
+  -webkit-filter:yellowscale(100%);
+  transition: 1s;
+  color: var(--shadow);
+  background: var(--lighteffect);
+  box-shadow: var(--lighteffect);
+}
+
+@media only screen and (max-width: 600px){
+  .baseboard{
+    margin-top: auto;
+  }
+}

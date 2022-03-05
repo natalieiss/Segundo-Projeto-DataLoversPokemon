@@ -1,12 +1,14 @@
 import data from './data/pokemon/pokemon.js'
 import {
   apearBigCardPokemon,
-  optionTypesHtml
+  optionTypesHtml,
+  smallCardPokemon
 } from './content.js'
 
 import {
   filterByType,
-  orderData
+  orderData,
+  typeName
 } from "./data.js"
 
 const pokemon = data.pokemon
@@ -15,11 +17,12 @@ const selectOrder = document.querySelector('#select-order')
 const inputSearch = document.getElementById('input-search')
 
 let filterTypes = document.querySelector('#type')
-let sectionCardsPokemon = document.querySelector("[data-section]") //quando coloca em colchetes ele pega todos os dados da section inclusive tags, elementos, atributos, texto e id
+let sectionCardsPokemon = document.querySelector("[data-section]")
 let cardSmall = document.getElementById('card-pokemon')
 let showPokemonBig = document.getElementById('card-pokemon-big')
 
-optionTypesHtml(pokemon)
+
+optionTypesHtml(pokemon, filterTypes)
 
 function toggleMenu(event) {
   if (event.type === 'touchstart') {
@@ -31,78 +34,55 @@ function toggleMenu(event) {
 }
 
 btnMobile.addEventListener("click", toggleMenu)
-btnMobile.addEventListener("touchstart", toggleMenu)
+btnMobile.addEventListener("touchstart", toggleMenu, { passive: true })
 
-const smallCardPokemon = (arrPokemon) => {
-  cardSmall.innerHTML = ""
-
-  arrPokemon.forEach((onePokemon, index) => {
-    let saveType = ""
-    for (let oneTypePokemon of onePokemon.type) {
-      saveType += (" " + oneTypePokemon.toUpperCase())
-    }
-    cardSmall.insertAdjacentHTML("beforeend",
-      `<button class="card-pokemon" data-item="${index}" >
-        <div>
-          <img data-item="${index}" src="${onePokemon.img}" alt="Imagem Pokemon" class="img-pokemon">
-          <p data-item="${index}" class="paragraph-card">${onePokemon.name.toUpperCase()}</p>
-          <p data-item="${index}" class="paragraph-card">${onePokemon.num}</p>
-          <p data-item="${index}" class="paragraph-card">${saveType}</p>
-        </div>
-      </button>`)
-  })
-}
-
-// let typedName = ""
-inputSearch.addEventListener("keydown", (e) => {
-  var key = e.button || e.code;
-  if (key == "Enter") {
-    alert('carregou enter o valor digitado foi: ' + e.code + " " + inputSearch.value);
-  }
-})
-
-smallCardPokemon(pokemon)
+smallCardPokemon(pokemon, cardSmall)
 
 let arrPokemon = []
 let arrPokemonOrder = []
 
+inputSearch.addEventListener("change", () => {
+  for (let i = 0; i < inputSearch.value.length; i++) {
+    const charCode = inputSearch.value.charCodeAt(i)
+    if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123)) {
+      arrPokemon = typeName(data.pokemon, inputSearch.value)
+      if (arrPokemon == 0) {
+        return cardSmall.textContent = "Not found! Verify the name and try again."
+      }
+      else {
+        smallCardPokemon(arrPokemon, cardSmall)
+      }
+    }
+  }
+})
+
 filterTypes.addEventListener("change", () => {
   if (filterTypes.value !== "") {
-    console.log("entrei no filtro")
-    if (filterTypes.value === "filtrar") {
-      smallCardPokemon(pokemon)
+    if (filterTypes.value === "filter") {
+      smallCardPokemon(pokemon, cardSmall)
       arrPokemonOrder = []
       arrPokemon = []
-      console.log("entrei no filtrar e apaguei o conteudo de arrPokemon idependente de ele estar vazio ou não", arrPokemon)
     } else {
-      const pokemonFilterType = (pokemonList, typesSelect) => {
-        return filterByType(pokemonList, typesSelect.value)
-      }
+      arrPokemon = []
       arrPokemonOrder = []
-      smallCardPokemon(pokemonFilterType(data.pokemon, filterTypes))
-      arrPokemon = pokemonFilterType(data.pokemon, filterTypes)
-      console.log("filtrei e mudei o arrPokemon que estava vazio", arrPokemon)
+      smallCardPokemon((filterByType(data.pokemon, filterTypes.value)), cardSmall)
+      arrPokemon = filterByType(data.pokemon, filterTypes.value)
     }
   } else {
-    smallCardPokemon(pokemon)
+    smallCardPokemon(pokemon, cardSmall)
   }
 })
 
 selectOrder.addEventListener("change", (e) => {
   let changeOrder = e.target.value
-  console.log(changeOrder)
   if (arrPokemon.length === 0) {
     arrPokemonOrder = []
-    console.log("ArrayPokemon -entrei em ordenar mas não fui filtrado antes", arrPokemon)
     arrPokemonOrder = orderData(data.pokemon, changeOrder)
-    console.log("O array ordenado fica assim: ", arrPokemonOrder)
-    smallCardPokemon(arrPokemonOrder)
+    smallCardPokemon(arrPokemonOrder, cardSmall)
   } else {
     arrPokemonOrder = []
-    console.log("ArrayPokemon -entrei em ordenar e fui filtrado antes, então estou menor mas ordenado", arrPokemon)
     arrPokemonOrder = orderData(arrPokemon, changeOrder)
-    console.log("se arr for o array filtrado ele fica ordenado assim:", arrPokemonOrder)
-    smallCardPokemon(arrPokemonOrder)
+    smallCardPokemon(arrPokemonOrder, cardSmall)
   }
 })
 

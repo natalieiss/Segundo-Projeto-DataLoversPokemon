@@ -1,34 +1,5 @@
-:root{
-    --pokedex: #D63025;
-    --cards: #C4C4C4;
-    --shadow: rgba(0, 0, 0, 0.527);
-    --line: rgba(0, 0, 0, .05);
-    --pattern: rgba(94, 92, 90, 0.397);
-    --lighteffect: #FFCC00;
-}
-
-*{
-  margin: 0;
-  padding: 0;
-  border: none;
-  box-sizing: border-box;
-  list-style: none;
-  text-decoration: none;
-}
-
-@font-face {
-  font-family: 'architectsDaughter';
-  src: url(./fontes/ArchitectsDaughter-Regular.ttf) format('truetype'),url(./fontes/OFL.txt) format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'spaceMono';
-  src: url(./fontes/Space_Mono/SpaceMono-Regular.ttf) format('truetype'),url(./fontes/Space_Mono/OFL.txt) format('opentype');
-  font-weight: normal;
-  font-style: normal;
-}
+@import url(./header.css);
+@import url(./footer.css);
 
 .body{
   background: black;
@@ -41,49 +12,6 @@
   background-color: black;
   display: flex;
   flex-direction: column;
-
-}
-
-.header-menu{
-  height: 80px ;
-  background: white;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1%;
-}
-
-.logo-image{
-  display: flex;
-  justify-content: left;
-  flex-direction: row;
-}
-
-.menu {
-  display: flex;
-  gap: .5rem;
-}
-
-.menu .link{
-  display: block;
-  padding: .5rem;
-}
-
-.link:hover {
-  background: var(--line);
-}
-
-.link{
-  color: black;
-}
-
-.btn-mobile{
-  display: none;
-}
-
-.img-header{
-  height: 60px;
-  margin: 1%;
 }
 
 .filters{
@@ -107,7 +35,7 @@
   justify-content: center;
 }
 
-.paragraph-big {
+.paragraph-big{
   padding: 10px;
   padding-top: 1%;
   margin: auto;
@@ -217,103 +145,32 @@
   cursor: pointer;
 }
 
-.card-pokemon:hover {
+.card-pokemon:hover{
   box-shadow: 0 0 10px 0 var(--lighteffect), 0 0 10px 4px var(--lighteffect);
 }
 
 .paragraph-card{
-    margin-top: 4px;
-    font-family: 'spaceMono';
+  margin-top: 4px;
+  font-family: 'spaceMono';
 }
 
-.baseboard{
-  text-align: center;
-  text-justify: center;
-  background-color: black;
-  color: white;
-  padding-top: 10px;
-  font-size: larger;
+.scrollbar-pattern::-webkit-scrollbar-track{
+	-webkit-box-shadow: inset 0 0 6px var(--shadow);
+	background-color: transparent;
 }
 
-.img-git{
-  border-radius: 10%;
-
+.scrollbar-pattern::-webkit-scrollbar{
+	width: 10px;
+	background-color: transparent;
 }
 
-.img-git:hover{
-  -webkit-filter:yellowscale(100%);
-  transition: 1s;
-  color: #111;
-  background: var(--lighteffect);
-  box-shadow: var(--lighteffect);
+.scrollbar-pattern::-webkit-scrollbar-thumb{
+	background-color: black;
+	border: 2px solid var(--pattern);
+  border-radius: 10px;
 }
 
-@media only screen and (max-width: 750px){
-  .menu{
-    display: block;
-    position: absolute;
-    width: 50vh;
-    top: 80px;
-    right: 0;
-    background: white;
-    box-shadow: -2rem 2rem 2rem var(--shadow);
-    transition: .6s;
-    height: 0px;
-    z-index: 1000;
-    visibility: hidden;
-    overflow-y: hidden;
-  }
-
-  .menu .link{
-   padding: 1rem 0;
-   margin: 0 1rem;
-   border-bottom: 2px solid var(--line);
-  }
-
-  .btn-mobile{
-    display: flex;
-    padding: .5rem;
-    font-size: 1rem;
-    background: none;
-    cursor: pointer;
-    gap: .5rem;
-  }
-
-  .hamburguer{
-    border-top: 2px solid;
-    width: 20px;
-  }
-
-  .hamburguer::after, .hamburguer::before{
-    content: '';
-    display: block;
-    width: 20px;
-    height: 2px;
-    background: currentColor;
-    margin-top: 5px;
-    transition: .3s;
-    position: relative;
-  }
-
-  .nav-options.active .hamburguer{
-    border-top-color: transparent;
-  }
-
-  .nav-options.active .hamburguer::before{
-    transform: rotate(135deg);
-
-  }
-
-  .nav-options.active .hamburguer::after{
-    transform: rotate(-135deg);
-    top: -7px;
-  }
-
-  .nav-options.active .menu{
-    visibility: visible;
-    height: calc(90vh - 80px);
-    overflow-y: auto;
-  }
+@media only screen and (max-width: 768px){
   .filters{
     display: flex;
     flex-direction: column;
@@ -322,7 +179,7 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px){
   .container-main{
     display: flex;
     flex-direction: column;
@@ -350,5 +207,3 @@
     margin-top: auto;
   }
 }
-
-

@@ -9,13 +9,13 @@
   <meta name="Author" content="Natalie Silva and Mônica Guimarães">
   <meta name="description" content="Gopedia">
   <title>Gopedia</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="./estilos/style.css" />
 </head>
 
 <body class="body">
   <header class="header-menu">
     <div class="logo-image">
-      <a id="logo" href="index.html" class="link"><img alt="GOPEDIA" src="./img/logo.png" class="img-header"></a>
+      <a id="logo" href="./homepage.html" class="link"><img alt="GOPEDIA" src="./img/logo.png" class="img-header"></a>
       <img src="./img/pikachugif.gif" alt="running pikachu" class="img-pikachu" width="80" />
     </div>
     <nav id="nav-options" class="nav-options" aria-expanded="false">
@@ -31,28 +31,10 @@
     </nav>
   </header>
   <section id="selection" class="filters">
-    <input type="search" id="input-search">
+    <input type="search" id="input-search" placeholder="Pesquisa por nome" data-ls-module="charCounter" maxlength="20">
     <legend>Pokémon types:</legend>
     <select id="type" class="filter-options">
-      <option value="filtrar">Filter</option>
-      <option value="bug" class="pokemon-selection">Bug</option>
-      <option value="dark" class="pokemon-selection">Dark</option>
-      <option value="dragon" class="pokemon-selection">Dragon</option>
-      <option value="electric" class="pokemon-selection">Electric</option>
-      <option value="fairy" class="pokemon-selection">Fairy</option>
-      <option value="fighting" class="pokemon-selection">Fighting</option>
-      <option value="fire" class="pokemon-selection">Fire</option>
-      <option value="flying" class="pokemon-selection">Flying</option>
-      <option value="ghost" class="pokemon-selection">Ghost</option>
-      <option value="grass" class="pokemon-selection">Grass</option>
-      <option value="ground" class="pokemon-selection">Ground</option>
-      <option value="ice" class="pokemon-selection">Ice</option>
-      <option value="normal" class="pokemon-selection">Normal</option>
-      <option value="poison" class="pokemon-selection">Poison</option>
-      <option value="psychic" class="pokemon-selection">Psychic</option>
-      <option value="rock" class="pokemon-selection">Rock</option>
-      <option value="steel" class="pokemon-selection">Steel</option>
-      <option value="water" class="pokemon-selection">Water</option>
+      <option value="filter">Filter</option>
     </select>
     <legend>Order:</legend>
     <select id="select-order" class="filter-options">
@@ -67,12 +49,12 @@
   </section>
   <div class="container-main">
     <main id="pokemons-search" class="main">
-      <section id="card-pokemon-big" class="big-card margin">
+      <section id="card-pokemon-big" class="big-card margin scrollbar-pattern">
         <div class="mysterious-pokemon"><img src="./img/Untitled-1.png" alt="Pokemon Misterioso" width="100%"
             class="img-style" />
         </div>
       </section>
-      <section class="pokedex margin">
+      <section class="pokedex margin scrollbar-pattern">
         <div class="container">
           <section id="card-pokemon" class="card-pokemon-section" data-section>
           </section>
@@ -84,11 +66,11 @@
         <a href="https://github.com/natalieiss" target="_blank">
           <strong class="github"><img src="./img/github.png" alt="imagemgit" class="img-git" width="25" /></strong>
         </a>and Mônica Guimarães<a href="https://github.com/MonicaGuimaraes" target="_blank">
-          <strong class="github"><img src="./img/github.png" alt="imagemgit" class="img-git" width="25" /></strong>
-          <!--<div> Ícones feitos por <a href="https://www.flaticon.com/br/autores/pixel-perfect" title="Pixel perfect">
+          <strong class="github"><img src="./img/github.png" alt="imagemgit" class="img-git" width="25" /></strong></a>
+        <!--<div> Ícones feitos por <a href="https://www.flaticon.com/br/autores/pixel-perfect" title="Pixel perfect">
               Pixel perfect </a> from <a href="https://www.flaticon.com/br/" title="Flaticon">www.flaticon.com'</a>*/
           </div>-->
-        </a>
+
       </p>
     </footer>
   </div>
