@@ -34,5 +34,11 @@ export const orderData = (arrPokemon, orderType) => {
 }
 
 export const filterByType = (data, selectFilter) =>
-  data.filter((pokemon) => pokemon.type.includes(selectFilter))
+  data.filter((pokemon) => pokemon.type.includes(selectFilter)) //includes funciona assim: se selecionei o tipo bug ele entra no include que pesquisa bug dentro do pokemon.type
+
+export const typeName = (data, inputLetterName) => {
+  return (data.filter((pokemon) =>
+    pokemon.name.toLowerCase().includes(inputLetterName.toLowerCase())
+  ))
+}
 
