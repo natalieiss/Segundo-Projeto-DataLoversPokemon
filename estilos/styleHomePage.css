@@ -3,6 +3,9 @@
 
 .body{
   background: black;
+  font-family: 'architectsDaughter';
+  font-weight: bold;
+  font-size: larger;
 }
 
 .section-pokeball{
