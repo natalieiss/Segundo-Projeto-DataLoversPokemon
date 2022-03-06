@@ -9,72 +9,76 @@
   <meta name="Author" content="Natalie Silva and Mônica Guimarães">
   <meta name="description" content="Gopedia">
   <title>Gopedia</title>
-  <link rel="stylesheet" href="./estilos/styleHomePage.css" />
+  <link rel="stylesheet" href="./estilos/style.css" />
 </head>
 
 <body class="body">
   <header class="header-menu">
     <div class="logo-image">
-      <a id="logo" href="homepage.html" class="link"><img alt="GOPEDIA" src="./img/logo.png" class="img-header"></a>
+      <a id="logo" href="./index.html" class="link"><img alt="GOPEDIA" src="./img/logo.png" class="img-header"></a>
       <img src="./img/pikachugif.gif" alt="running pikachu" class="img-pikachu" width="80" />
     </div>
-    <section class="section-pokeball">
-      <img src="./img/pokeballbutton.png" width="70" height="70" />
-    </section>
     <nav id="nav-options" class="nav-options" aria-expanded="false">
       <button id="btn-mobile" class="btn-mobile">
         <span id="hamburguer" class="hamburguer"></span>
       </button>
       <ul id="menu" class="menu">
-        <li><a href="https://pokemongolive.com/en/" class="link">Pokémon GO</a></li>
-        <li><a href="https://www.pokemon.com/us/app/pokemon-go/" class="link">How to play</a></li>
+        <li><a href="https://pokemongolive.com/en/" class="link">Pokémon GO <img src="./img/pokeball_PNG19.png"
+              width="16"></a></li>
+        <li><a href="https://www.pokemon.com/us/app/pokemon-go/" class="link">How to play
+            &#127918;</a></li>
         <li><a href="https://tecnoblog.net/responde/como-jogar-pokemon-go-guia-para-iniciantes/" class="link">Aprenda a
-            Jogar</a></li>
+            Jogar
+            &#127918;</a></li>
       </ul>
     </nav>
   </header>
-
+  <section id="selection" class="filters">
+    <input type="search" id="input-search" placeholder="Pesquisa por nome" data-ls-module="charCounter" maxlength="20"
+      class="filter-options">
+    <legend>Pokémon types:</legend>
+    <select id="type" class="filter-options">
+      <option value="filter">Filter</option>
+    </select>
+    <legend>Order:</legend>
+    <select id="select-order" class="filter-options">
+      <option id="order-num" value="num" selected>Pokémon Number</option>
+      <option id="order-az" value="name-az">A - Z</option>
+      <option id="order-za" value="name-za">Z - A</option>
+      <option id="order-cp" value="max-smaller-cp">Descending CP</option>
+      <option id="order-cp-smaller-max" value="smaller-max-cp">Ascending CP</option>
+      <option value="spawn-chance">Descending spawn chance</option>
+      <option value="weaknesses">Ascending weaknesses</option>
+    </select>
+  </section>
   <div class="container-main">
-    <main id="main" class="main">
-      <div class="content">
-        <section class="section-oak">
-          <img src="./img/Untitled-12.png" alt="oak" width="60%">
-        </section>
-        <section class="section-btn-content">
-          <div class="div-talk">
-            <p class="p-space">
-              Welcome trainers, to the world of Pokémon. This world is
-              widely inhabited by creatures known as Pokémon.
-              We humans live alongside Pokémon as friends.
-              As time we play together, and at other times we work together.
-            </p>
-            <p class="p-space">
-              Here's a Pokédex that might
-              come in handy on your journey!
-            </p>
-            <p class="p-space">
-              Just click on it!
-            </p>
-          </div>
-          <button class="pokedex btn" onclick="window.location.href = 'index.html'"><img
-              src="../src/img/pokedexfavicon.png" alt="POKEDEX" height="50vh" /></button>
-        </section>
-      </div>
+    <main id="pokemons-search" class="main">
+      <section id="card-pokemon-big" class="big-card margin scrollbar-pattern">
+        <div class="mysterious-pokemon"><img src="./img/Untitled-1.png" alt="Pokemon Misterioso" width="100%"
+            class="img-style" />
+        </div>
+      </section>
+      <section class="pokedex margin scrollbar-pattern">
+        <div class="container">
+          <section id="card-pokemon" class="card-pokemon-section" data-section>
+          </section>
+        </div>
+      </section>
     </main>
     <footer class="baseboard">
       <p>Developed by Natalie I. S. Santos
         <a href="https://github.com/natalieiss" target="_blank">
           <strong class="github"><img src="./img/github.png" alt="imagemgit" class="img-git" width="25" /></strong>
         </a>and Mônica Guimarães<a href="https://github.com/MonicaGuimaraes" target="_blank">
-          <strong class="github"><img src="./img/github.png" alt="imagemgit" class="img-git" width="25" /></strong>
-          <!--<div> Ícones feitos por <a href="https://www.flaticon.com/br/autores/pixel-perfect" title="Pixel perfect">
+          <strong class="github"><img src="./img/github.png" alt="imagemgit" class="img-git" width="25" /></strong></a>
+        <!--<div> Ícones feitos por <a href="https://www.flaticon.com/br/autores/pixel-perfect" title="Pixel perfect">
               Pixel perfect </a> from <a href="https://www.flaticon.com/br/" title="Flaticon">www.flaticon.com'</a>*/
           </div>-->
-        </a>
+
       </p>
     </footer>
   </div>
-  <script src="homepage.js" type="module"></script>
+  <script src="main.js" type="module"></script>
 </body>
 
 </html>

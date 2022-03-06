@@ -46,13 +46,17 @@ inputSearch.addEventListener("change", () => {
     const charCode = inputSearch.value.charCodeAt(i)
     if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123)) {
       arrPokemon = typeName(data.pokemon, inputSearch.value)
-      if (arrPokemon == 0) {
-        return cardSmall.textContent = "Not found! Verify the name and try again."
+      if (arrPokemon.length == 0) {
+        cardSmall.textContent = "Not found! Verify the name and try again."
       }
       else {
         smallCardPokemon(arrPokemon, cardSmall)
       }
     }
+  }
+  if (inputSearch.value == "") {
+    smallCardPokemon(pokemon, cardSmall)
+    arrPokemon = []
   }
 })
 

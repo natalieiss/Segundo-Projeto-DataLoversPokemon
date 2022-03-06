@@ -20,12 +20,16 @@
   padding: 1%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content:space-between;
   align-items: center;
 }
 
 .filter-options{
   font-family: 'spaceMono';
+  border-color: black;
+  border: solid;
+  border-radius: 7px;
+  text-align: center;
 }
 
 .main{
