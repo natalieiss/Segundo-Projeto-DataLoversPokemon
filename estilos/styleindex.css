@@ -9,9 +9,12 @@
 }
 
 .section-pokeball{
+  justify-self: center;
   height: 10px;
   display: flex;
   justify-content: center;
+  position: absolute;
+  left: 49%;
 }
 
 .container-main{
