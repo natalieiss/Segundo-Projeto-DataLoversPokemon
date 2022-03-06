@@ -3,6 +3,9 @@
 
 .body{
   background: black;
+  font-family: 'architectsDaughter';
+  font-weight: bold;
+  font-size: larger;
 }
 
 .section-pokeball{
@@ -97,7 +100,7 @@
   justify-self: center;
 }
 .div-talk::-webkit-scrollbar-track{
-	-webkit-box-shadow: inset 0 0 6px var(--shadow);
+	box-shadow: inset 0 0 6px var(--shadow);
 	background-color: transparent;
 }
 
