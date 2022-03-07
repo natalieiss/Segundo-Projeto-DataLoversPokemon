@@ -24,17 +24,12 @@ let showPokemonBig = document.getElementById('card-pokemon-big')
 
 optionTypesHtml(pokemon, filterTypes)
 
-function toggleMenu(event) {
-  if (event.type === 'touchstart') {
-    event.preventDefault
-  } else {
-    const nav = document.getElementById('nav-options')
-    nav.classList.toggle('active')
-  }
+function toggleMenu() {
+  const nav = document.getElementById('nav-options')
+  nav.classList.toggle('active')
 }
 
 btnMobile.addEventListener("click", toggleMenu)
-btnMobile.addEventListener("touchstart", toggleMenu, { passive: true })
 
 smallCardPokemon(pokemon, cardSmall)
 
