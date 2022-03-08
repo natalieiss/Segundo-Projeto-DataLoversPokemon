@@ -36,20 +36,24 @@
   <section id="selection" class="filters">
     <input type="search" id="input-search" placeholder="Pesquisa por nome" data-ls-module="charCounter" maxlength="20"
       class="filter-options">
-    <legend>Pokémon types:</legend>
-    <select id="type" class="filter-options">
-      <option value="filter">Filter</option>
-    </select>
-    <legend>Order:</legend>
-    <select id="select-order" class="filter-options">
-      <option id="order-num" value="num" selected>Pokémon Number</option>
-      <option id="order-az" value="name-az">A - Z</option>
-      <option id="order-za" value="name-za">Z - A</option>
-      <option id="order-cp" value="max-smaller-cp">Descending CP</option>
-      <option id="order-cp-smaller-max" value="smaller-max-cp">Ascending CP</option>
-      <option value="spawn-chance">Descending spawn chance</option>
-      <option value="weaknesses">Ascending weaknesses</option>
-    </select>
+    <div class="select">
+      <legend class="legend">Pokémon types:</legend>
+      <select id="type" class="filter-options">
+        <option value="filter">Filter</option>
+      </select>
+    </div>
+    <div class="select">
+      <legend class="legend">Order: </legend>
+      <select id="select-order" class="filter-options">
+        <option id="order-num" value="num" selected>Pokémon Number</option>
+        <option id="order-az" value="name-az">A - Z</option>
+        <option id="order-za" value="name-za">Z - A</option>
+        <option id="order-cp" value="max-smaller-cp">Descending CP</option>
+        <option id="order-cp-smaller-max" value="smaller-max-cp">Ascending CP</option>
+        <option value="spawn-chance">Descending spawn chance</option>
+        <option value="weaknesses">Ascending weaknesses</option>
+      </select>
+    </div>
   </section>
   <div class="container-main">
     <main id="pokemons-search" class="main">

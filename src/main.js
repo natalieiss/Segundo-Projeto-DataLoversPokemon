@@ -8,7 +8,8 @@ import {
 import {
   filterByType,
   orderData,
-  typeName
+  typeName,
+  mathWithStr
 } from "./data.js"
 
 const pokemon = data.pokemon
@@ -21,7 +22,7 @@ let sectionCardsPokemon = document.querySelector("[data-section]")
 let cardSmall = document.getElementById('card-pokemon')
 let showPokemonBig = document.getElementById('card-pokemon-big')
 
-
+mathWithStr(pokemon, "type") //estudar
 optionTypesHtml(pokemon, filterTypes)
 
 function toggleMenu() {

@@ -1,4 +1,3 @@
-
 export const orderData = (arrPokemon, orderType) => {
   const order = {
     "max-smaller-cp": function () { return arrPokemon.sort((a, b) => (b['stats']["max-cp"]) - (a['stats']["max-cp"])) },
@@ -39,3 +38,34 @@ export const typeName = (data, inputLetterName) => {
   ))
 }
 
+export const mathWithStr = (arrPokemon, statusPokemon) => {
+  let arrWithAllStatus = []
+
+  if (typeof (arrPokemon[0][statusPokemon]) == 'object') {
+    let arr = arrPokemon.map((pokemon) => pokemon[statusPokemon])
+    arr.forEach(element => {
+      arrWithAllStatus = arrWithAllStatus.concat(element)
+    })
+    console.log("if", arrWithAllStatus)
+  } else {
+    arrWithAllStatus = arrPokemon.map((pokemon) => pokemon[statusPokemon])
+    console.log("else", arrWithAllStatus)
+  }
+
+  // eslint-disable-next-line no-undef
+  const arrWithoutRepeat = [...new Set(arrWithAllStatus)]
+  console.log("sem repetição", arrWithoutRepeat)
+  const sum = Object.create(null); //estudar muito
+  let qtd = 0
+  for (let statusPokemon of arrWithoutRepeat) {
+    console.log(typeof statusPokemon)
+    qtd = 0
+    for (var i = 0; i < arrWithAllStatus.length; i++) {
+      if (arrWithAllStatus[i] === statusPokemon) qtd++
+    }
+    sum[statusPokemon] = qtd; //estudar muito
+  }
+  console.log(sum)
+  console.log(sum['grass'])
+
+}

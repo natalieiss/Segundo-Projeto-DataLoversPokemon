@@ -220,13 +220,11 @@ export function optionTypesHtml(pokemon, typeHtml) {
 
   pokeType.forEach(function (typeValueOf) {
     filterConcat = filterConcat.concat(typeValueOf)
-  }
-  )
+  })
 
   // eslint-disable-next-line no-undef
   const filters = [...new Set(filterConcat)]
   filters.forEach(function (newFilters) {
     typeHtml.insertAdjacentHTML('beforeend', `<option value="${newFilters}" class="pokemon-selection">${newFilters.charAt(0).toUpperCase() + (newFilters.slice(1, newFilters.legth))}</option>`)
   })
-
 }

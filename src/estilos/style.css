@@ -32,6 +32,11 @@
   text-align: center;
 }
 
+.select{
+  display: flex;
+  flex-direction: row;
+}
+
 .main{
   height: auto;
   display: flex;
@@ -180,6 +185,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  .select{
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+  }
+
+  .legend{
+    margin: 0;
   }
 }
 
