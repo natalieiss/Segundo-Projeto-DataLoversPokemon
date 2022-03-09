@@ -8,7 +8,8 @@ import {
 import {
   filterByType,
   orderData,
-  typeName
+  typeName,
+  mathWithStr
 } from "./data.js"
 
 const pokemon = data.pokemon
@@ -24,17 +25,12 @@ let showPokemonBig = document.getElementById('card-pokemon-big')
 
 optionTypesHtml(pokemon, filterTypes)
 
-function toggleMenu(event) {
-  if (event.type === 'touchstart') {
-    event.preventDefault
-  } else {
-    const nav = document.getElementById('nav-options')
-    nav.classList.toggle('active')
-  }
+function toggleMenu() {
+  const nav = document.getElementById('nav-options')
+  nav.classList.toggle('active')
 }
 
 btnMobile.addEventListener("click", toggleMenu)
-btnMobile.addEventListener("touchstart", toggleMenu, { passive: true })
 
 smallCardPokemon(pokemon, cardSmall)
 
@@ -42,6 +38,9 @@ let arrPokemon = []
 let arrPokemonOrder = []
 
 inputSearch.addEventListener("change", () => {
+  arrPokemonOrder = []
+  selectOrder.value = 'none'
+  filterTypes.value = 'filter'
   for (let i = 0; i < inputSearch.value.length; i++) {
     const charCode = inputSearch.value.charCodeAt(i)
     if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123)) {
@@ -55,20 +54,19 @@ inputSearch.addEventListener("change", () => {
     }
   }
   if (inputSearch.value == "") {
-    smallCardPokemon(pokemon, cardSmall)
     arrPokemon = []
+    arrPokemonOrder = []
+    smallCardPokemon(pokemon, cardSmall)
   }
 })
 
 filterTypes.addEventListener("change", () => {
+  arrPokemon = []
+  arrPokemonOrder = []
   if (filterTypes.value !== "") {
     if (filterTypes.value === "filter") {
       smallCardPokemon(pokemon, cardSmall)
-      arrPokemonOrder = []
-      arrPokemon = []
     } else {
-      arrPokemon = []
-      arrPokemonOrder = []
       smallCardPokemon((filterByType(data.pokemon, filterTypes.value)), cardSmall)
       arrPokemon = filterByType(data.pokemon, filterTypes.value)
     }
@@ -78,24 +76,43 @@ filterTypes.addEventListener("change", () => {
 })
 
 selectOrder.addEventListener("change", (e) => {
+  arrPokemonOrder = []
   let changeOrder = e.target.value
-  if (arrPokemon.length === 0) {
-    arrPokemonOrder = []
+  if (changeOrder === 'none') {
+    console.log("none")
+    console.log(data.pokemon)
+    smallCardPokemon(orderData(data.pokemon, "num"), cardSmall)
+    console.log(smallCardPokemon(data.pokemon, cardSmall))
+  } else if (arrPokemon.length === 0 && changeOrder !== 'none') {
+    console.log("outro if ")
     arrPokemonOrder = orderData(data.pokemon, changeOrder)
     smallCardPokemon(arrPokemonOrder, cardSmall)
   } else {
-    arrPokemonOrder = []
+    console.log("else")
     arrPokemonOrder = orderData(arrPokemon, changeOrder)
     smallCardPokemon(arrPokemonOrder, cardSmall)
   }
 })
-
+console.log(data.pokemon)
 sectionCardsPokemon.addEventListener("click", (e) => {
   let extensionW = window.screen.width
   const { target } = e;
   const dataItem = target.dataset.item
   if (dataItem) {
-    apearBigCardPokemon(dataItem, showPokemonBig, arrPokemon, arrPokemonOrder, pokemon)
+    let onePokemon = []
+
+    if (arrPokemon.length === 0 && arrPokemonOrder.length === 0) {
+      onePokemon = pokemon[Number(dataItem)]
+    } else if (arrPokemon.length !== 0 && arrPokemonOrder.length === 0) {
+      onePokemon = arrPokemon[Number(dataItem)]
+    } else if (arrPokemon.length !== 0 && arrPokemonOrder.length !== 0) {
+      onePokemon = arrPokemonOrder[Number(dataItem)]
+    } else if (arrPokemon.length === 0 && arrPokemonOrder !== 0) {
+      onePokemon = arrPokemonOrder[Number(dataItem)]
+    }
+
+    apearBigCardPokemon(showPokemonBig, onePokemon)
+    console.log(mathWithStr(pokemon, "type", onePokemon)) //estudar
   }
   if (extensionW <= 600) {
     window.scrollTo(0, 1000)

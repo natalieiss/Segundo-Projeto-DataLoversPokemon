@@ -1,5 +1,7 @@
 export const smallCardPokemon = (arrPokemon, cardSmall) => {
+  console.log("card small")
   cardSmall.innerHTML = ""
+  console.log(arrPokemon)
   arrPokemon.forEach((onePokemon, index) => {
     let saveType = ""
     for (let oneTypePokemon of onePokemon.type) {
@@ -17,19 +19,8 @@ export const smallCardPokemon = (arrPokemon, cardSmall) => {
   })
 }
 
-export const apearBigCardPokemon = (data, showPokemonBig, arrPokemon, arrPokemonOrder, pokemon) => {
+export const apearBigCardPokemon = (showPokemonBig, onePokemon) => {
   showPokemonBig.innerHTML = ''
-  let onePokemon
-
-  if (arrPokemon.length === 0 && arrPokemonOrder.length === 0) {
-    onePokemon = pokemon[Number(data)]
-  } else if (arrPokemon.length !== 0 && arrPokemonOrder.length === 0) {
-    onePokemon = arrPokemon[Number(data)]
-  } else if (arrPokemon.length !== 0 && arrPokemonOrder.length !== 0) {
-    onePokemon = arrPokemonOrder[Number(data)]
-  } else if (arrPokemon.length === 0 && arrPokemonOrder !== 0) {
-    onePokemon = arrPokemonOrder[Number(data)]
-  }
 
   let resistantType = ""
   const resistantAtribute = onePokemon.resistant
@@ -220,13 +211,11 @@ export function optionTypesHtml(pokemon, typeHtml) {
 
   pokeType.forEach(function (typeValueOf) {
     filterConcat = filterConcat.concat(typeValueOf)
-  }
-  )
+  })
 
   // eslint-disable-next-line no-undef
   const filters = [...new Set(filterConcat)]
   filters.forEach(function (newFilters) {
     typeHtml.insertAdjacentHTML('beforeend', `<option value="${newFilters}" class="pokemon-selection">${newFilters.charAt(0).toUpperCase() + (newFilters.slice(1, newFilters.legth))}</option>`)
   })
-
 }

@@ -23,33 +23,39 @@
         <span id="hamburguer" class="hamburguer"></span>
       </button>
       <ul id="menu" class="menu">
-        <li><a href="https://pokemongolive.com/en/" class="link">Pokémon GO <img src="./img/pokeball_PNG19.png"
-              width="16"></a></li>
-        <li><a href="https://www.pokemon.com/us/app/pokemon-go/" class="link">How to play
+        <li><a href="https://pokemongolive.com/en/" class="link" target="_blank">Pokémon GO <img
+              src="./img/pokeball_PNG19.png" width="16"></a></li>
+        <li><a href="https://www.pokemon.com/us/app/pokemon-go/" class="link" target="_blank">How to play
             &#127918;</a></li>
-        <li><a href="https://tecnoblog.net/responde/como-jogar-pokemon-go-guia-para-iniciantes/" class="link">Aprenda a
+        <li><a href="https://tecnoblog.net/responde/como-jogar-pokemon-go-guia-para-iniciantes/" class="link"
+            target="_blank">Aprenda a
             Jogar
             &#127918;</a></li>
       </ul>
     </nav>
   </header>
   <section id="selection" class="filters">
-    <input type="search" id="input-search" placeholder="Pesquisa por nome" data-ls-module="charCounter" maxlength="20"
+    <input type="search" id="input-search" placeholder="search by name" data-ls-module="charCounter" maxlength="20"
       class="filter-options">
-    <legend>Pokémon types:</legend>
-    <select id="type" class="filter-options">
-      <option value="filter">Filter</option>
-    </select>
-    <legend>Order:</legend>
-    <select id="select-order" class="filter-options">
-      <option id="order-num" value="num" selected>Pokémon Number</option>
-      <option id="order-az" value="name-az">A - Z</option>
-      <option id="order-za" value="name-za">Z - A</option>
-      <option id="order-cp" value="max-smaller-cp">Descending CP</option>
-      <option id="order-cp-smaller-max" value="smaller-max-cp">Ascending CP</option>
-      <option value="spawn-chance">Descending spawn chance</option>
-      <option value="weaknesses">Ascending weaknesses</option>
-    </select>
+    <div class="select">
+      <legend class="legend">Pokémon types:</legend>
+      <select id="type" class="filter-options">
+        <option value="filter">None</option>
+      </select>
+    </div>
+    <div class="select">
+      <legend class="legend">Order: </legend>
+      <select id="select-order" class="filter-options">
+        <option value="none">None</option>
+        <option id="order-num" value="num">Pokémon Number</option>
+        <option id="order-az" value="name-az">A - Z</option>
+        <option id="order-za" value="name-za">Z - A</option>
+        <option id="order-cp" value="max-smaller-cp">Descending CP</option>
+        <option id="order-cp-smaller-max" value="smaller-max-cp">Ascending CP</option>
+        <option value="spawn-chance">Descending spawn chance</option>
+        <option value="weaknesses">Ascending weaknesses</option>
+      </select>
+    </div>
   </section>
   <div class="container-main">
     <main id="pokemons-search" class="main">
