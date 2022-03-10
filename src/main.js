@@ -9,7 +9,10 @@ import {
   filterByType,
   orderData,
   typeName,
-  mathWithStr
+  createPropertyArr,
+  createArrWithoutRepeat,
+  percentOfProperty,
+  showSumArr
 } from "./data.js"
 
 const pokemon = data.pokemon
@@ -112,7 +115,11 @@ sectionCardsPokemon.addEventListener("click", (e) => {
     }
 
     apearBigCardPokemon(showPokemonBig, onePokemon)
-    console.log(mathWithStr(pokemon, "type", onePokemon)) //estudar
+    const arrWithAllStatus = createPropertyArr(pokemon, "type")
+    const arrWithoutRepeat = createArrWithoutRepeat(arrWithAllStatus)
+    const sum = percentOfProperty(arrWithAllStatus, arrWithoutRepeat, pokemon)
+    const sumProperty = showSumArr(onePokemon, "type", sum, arrWithoutRepeat)
+    console.log(sumProperty)
   }
   if (extensionW <= 600) {
     window.scrollTo(0, 1000)

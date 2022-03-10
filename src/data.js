@@ -38,25 +38,23 @@ export const typeName = (data, inputLetterName) => {
   ))
 }
 
-export const mathWithStr = (arrPokemon, statusPokemon, onePokemon) => {
+export const createPropertyArr = (arrPokemon, statusPokemon) => {
   let arrWithAllStatus = []
+  let arr = arrPokemon.map((pokemon) => pokemon[statusPokemon])
+  arrWithAllStatus = arr.flat()
+  console.log(arrWithAllStatus, "arrWithAllStatus")
+  return arrWithAllStatus
+}
 
-  if (typeof (arrPokemon[0][statusPokemon]) == 'object') {
-    let arr = arrPokemon.map((pokemon) => pokemon[statusPokemon])
-    arrWithAllStatus = arr.flat()
-
-    console.log("if", arrWithAllStatus)
-  } else {
-    arrWithAllStatus = arrPokemon.map((pokemon) => pokemon[statusPokemon])
-    console.log("else", arrWithAllStatus)
-  }
-
-  // eslint-disable-next-line no-undef
+export const createArrWithoutRepeat = (arrWithAllStatus) => {
+  //eslint-disable-next-line no-undef
   const arrWithoutRepeat = [...new Set(arrWithAllStatus)]
   console.log("sem repetição", arrWithoutRepeat)
+  return arrWithoutRepeat
+}
 
-
-  const sum = Object.create(null); //estudar muito
+export const percentOfProperty = (arrWithAllStatus, arrWithoutRepeat, arrPokemon) => {
+  const sum = Object.create(null);
   let qtd = 0
   for (let status of arrWithoutRepeat) {
     console.log(typeof status)
@@ -65,27 +63,29 @@ export const mathWithStr = (arrPokemon, statusPokemon, onePokemon) => {
       if (arrWithAllStatus[i] === status) qtd++
     }
     let percent = ((qtd / arrPokemon.length) * 100).toFixed([2])
-    sum[status] = [qtd, percent, status]; //estudar muito
+    sum[status] = { qtd, percent, status }
     console.log(sum[status])
   }
+  console.log(sum)
+  return sum
+}
+
+export const showSumArr = (onePokemon, statusPokemon, sum, arrWithoutRepeat) => {
   let arrReturn = []
-  arrWithoutRepeat.forEach(function (status) {
-    if (typeof (onePokemon[statusPokemon]) == 'object') {
-      for (let type of onePokemon[statusPokemon]) {
+  arrWithoutRepeat.forEach(function (status) { //poison
+    if (typeof (onePokemon[statusPokemon]) == 'object') { //type
+      for (let type of onePokemon[statusPokemon]) { //grass poison
         if (type === status) {
           arrReturn.push(sum[status])
+          console.log("type", arrReturn)
         }
-        else {
-          if (onePokemon[statusPokemon] === status) {
-            arrReturn = sum[status]
-          }
-        }
+      }
+    } else {
+      if (onePokemon[statusPokemon] === status) {
+        arrReturn = sum[status]
+        console.log("rarity", arrReturn)
       }
     }
   })
-
-
-  console.log(sum)
-  console.log(sum['grass'])
   return arrReturn
 }
