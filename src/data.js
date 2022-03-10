@@ -47,7 +47,7 @@ export const createPropertyArr = (arrPokemon, statusPokemon) => {
 }
 
 export const createArrWithoutRepeat = (arrWithAllStatus) => {
-  //eslint-disable-next-line no-undef
+  //eslint-disable-next-line
   const arrWithoutRepeat = [...new Set(arrWithAllStatus)]
   console.log("sem repetição", arrWithoutRepeat)
   return arrWithoutRepeat

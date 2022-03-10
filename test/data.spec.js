@@ -1,8 +1,7 @@
 
-import { describe } from 'eslint/lib/rule-tester/rule-tester';
-import { orderData, filterByType } from '../src/data.js';
+import { orderData, filterByType, typeName, createPropertyArr, createArrWithoutRepeat, percentOfProperty } from '../src/data.js';
 
-
+const arrTest0 = ["fire", "fire", "fire", "grass", "grass", "water"]
 const arrTest = [
   {
     "num": "001",
@@ -540,4 +539,62 @@ describe('filterByType', () => {
   });
 })
 
-// describe("mathWithStr", () =>)
+describe("typeName", () => {
+  it('is a function', () => {
+    expect(typeof typeName).toBe('function')
+  })
+
+  it('Should return "bulbasaur" for arrTest with "bul"', () => {
+    expect(typeName(arrTest, "bul")).toEqual([{
+      "num": "001",
+      "name": "bulbasaur",
+      "type": [
+        "grass",
+        "poison"
+      ],
+      "spawn-chance": "0.69",
+      "stats": {
+        "base-attack": "118",
+        "base-defense": "111",
+        "base-stamina": "128",
+        "max-cp": "1115",
+        "max-hp": "113"
+      },
+      "weaknesses": [
+        "fire",
+        "ice",
+        "flying",
+        "psychic"
+      ]
+    }])
+  });
+})
+
+describe("createPropertyArr", () => {
+  it('is a function', () => {
+    expect(typeof createPropertyArr).toBe('function')
+  })
+
+  it('Should return "["grass", "poison", "psychic", "fire"]" for arrTest with "type"', () => {
+    expect(createPropertyArr(arrTest, "type")).toEqual(["fire", "psychic", "grass", "poison",])
+  })
+})
+
+describe("createArrWithoutRepeat", () => {
+  it('is a function', () => {
+    expect(typeof createArrWithoutRepeat).toBe('function')
+  })
+  it('Should return "["fire", "grass", "water"]" for arrTest0', () => {
+    expect(createArrWithoutRepeat(arrTest0)).toEqual(["fire", "grass", "water"])
+  })
+})
+
+describe("percentOfProperty", () => {
+  it('is a function', () => {
+    expect(typeof percentOfProperty).toBe('function')
+  })
+
+  it('Should return "{qtd: 1, percent: "33.33", status: "fire"}" for arrTest with ["fire", "psychic", "grass", "poison"]', () => {
+    expect(percentOfProperty(["fire", "psychic", "grass", "poison"], ["fire", "psychic", "grass", "poison"], arrTest).fire).toEqual({ qtd: 1, percent: "33.33", status: "fire" })
+  })
+})
