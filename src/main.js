@@ -96,4 +96,4 @@ sectionCardsPokemon.addEventListener("click", (e) => {
   if (extensionW <= 600) {
     window.scrollTo(0, 1000)
   }
-});
+})
