@@ -82,7 +82,7 @@ export const showSumArr = (onePokemon, statusPokemon, sum, arrWithoutRepeat) => 
       }
     } else {
       if (onePokemon[statusPokemon] === status) {
-        arrReturn = sum[status]
+        arrReturn = [sum[status]]
         console.log("rarity", arrReturn)
       }
     }
