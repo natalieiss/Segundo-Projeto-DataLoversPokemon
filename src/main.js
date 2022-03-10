@@ -120,6 +120,19 @@ sectionCardsPokemon.addEventListener("click", (e) => {
     const sum = percentOfProperty(arrWithAllStatus, arrWithoutRepeat, pokemon)
     const sumProperty = showSumArr(onePokemon, "type", sum, arrWithoutRepeat)
     console.log(sumProperty)
+
+
+    for (let line of sumProperty) {
+
+      showPokemonBig.insertAdjacentHTML('afterbegin', `
+      <div class="pattern">
+        <p class="paragraph-big"><b>Number of ${line.status} pokemons: ${line.qtd}</b></p>
+        <p class="paragraph-big"><b>Percentage of ${line.status} pokemons: ${line.percent}%</b></p>
+      </div>`
+      )
+
+    }
+    //criar um for...of com um template
   }
   if (extensionW <= 600) {
     window.scrollTo(0, 1000)
