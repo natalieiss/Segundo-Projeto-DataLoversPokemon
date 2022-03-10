@@ -1,4 +1,5 @@
 
+import { describe } from 'eslint/lib/rule-tester/rule-tester';
 import { orderData, filterByType } from '../src/data.js';
 
 
@@ -538,3 +539,5 @@ describe('filterByType', () => {
     expect(filterByType(arrTest, "")).toEqual([])
   });
 })
+
+// describe("mathWithStr", () =>)
