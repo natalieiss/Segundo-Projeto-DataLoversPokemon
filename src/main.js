@@ -25,7 +25,6 @@ let sectionCardsPokemon = document.querySelector("[data-section]")
 let cardSmall = document.getElementById('card-pokemon')
 let showPokemonBig = document.getElementById('card-pokemon-big')
 
-
 optionTypesHtml(pokemon, filterTypes)
 
 function toggleMenu() {
@@ -116,7 +115,7 @@ sectionCardsPokemon.addEventListener("click", (e) => {
     const sumProperty = showSumArr(onePokemon, "type", sum, arrWithoutRepeat)
 
     for (let line of sumProperty) {
-      showPokemonBig.insertAdjacentHTML('afterbegin', `
+      showPokemonBig.insertAdjacentHTML('beforeend', `
       <div class="pattern">
         <p class="paragraph-big"><b>Number of ${line.status} pokemons: ${line.qtd}</b></p>
         <p class="paragraph-big"><b>Percentage of ${line.status} pokemons: ${line.percent}%</b></p>
