@@ -49,6 +49,17 @@ O universo pokémon foi criado em 1995 e ainda atualmente é visto como uma "feb
 
 Desta forma, o presente aplicativo web é destinado a usuários de todas as idades que acompanham tanto a franquia de games quanto as séries de Pokémon. Também é destinado a novos usuários, tendo como principal objetivo proporcionar uma experiência única e divertida para todos incluindo também a sensação de nostalgia por tratar-se de uma interface intuitiva e relativamente simples por remeter ao padrão de formatação dos games de Gameboy Color com botões e overflow que lembram o Windows 98.
 
+<img src="./readmeimg/1historiadeusuario.png" alt="usuários" width="700">
+
+<img src="./readmeimg/2historiadeusuario.png" alt="usuários" width="700">
+
+<img src="./readmeimg/3historiadeusuario.png" alt="usuários" width="700">
+
+<img src="./readmeimg/4historiadeusuario.png" alt="usuários" width="700">
+
+<img src="./readmeimg/5historiadeusuario.png" alt="usuários" width="700">
+
+<img src="./readmeimg/6historiadeusuario.png" alt="usuários" width="700">
 
 # Logo
 O logo foi pensado e construído para que remetece a uma enciclopédia e ao jogo Pokémon GO.
