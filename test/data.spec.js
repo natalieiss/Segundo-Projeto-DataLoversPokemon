@@ -1,5 +1,5 @@
 
-import { orderData, filterByType, typeName, createPropertyArr, createArrWithoutRepeat, percentOfProperty } from '../src/data.js';
+import { orderData, filterByType, typeName, createPropertyArr, createArrWithoutRepeat, percentOfProperty, showSumArr } from '../src/data.js';
 
 const arrTest0 = ["fire", "fire", "fire", "grass", "grass", "water"]
 const arrTest = [
@@ -508,6 +508,27 @@ describe('orderData', () => {
   });
 })
 
+const onePokemon = {
+  "num": "038",
+  "name": "ninetales",
+  "type": [
+    "fire"
+  ],
+  "spawn-chance": "0.0077",
+  "stats": {
+    "base-attack": "169",
+    "base-defense": "190",
+    "base-stamina": "177",
+    "max-cp": "2279",
+    "max-hp": "151"
+  },
+  "weaknesses": [
+    "water",
+    "ground",
+    "rock"
+  ]
+}
+
 describe('filterByType', () => {
   it('is a function', () => {
     expect(typeof filterByType).toBe('function')
@@ -596,5 +617,16 @@ describe("percentOfProperty", () => {
 
   it('Should return "{qtd: 1, percent: "33.33", status: "fire"}" for arrTest with ["fire", "psychic", "grass", "poison"]', () => {
     expect(percentOfProperty(["fire", "psychic", "grass", "poison"], ["fire", "psychic", "grass", "poison"], arrTest).fire).toEqual({ qtd: 1, percent: "33.33", status: "fire" })
+  })
+})
+
+const sum = percentOfProperty(["fire", "psychic", "grass", "poison"], ["fire", "psychic", "grass", "poison"], arrTest)
+//export const showSumArr = (onePokemon, statusPokemon, sum, arrWithoutRepeat)
+describe("showSumArr", () => {
+  it('is a function', () => {
+    expect(typeof showSumArr).toBe('function')
+  })
+  it('Should return "{qtd: 22, percent: "8.76", status: "fire"}"', () => {
+    expect(showSumArr(onePokemon, "type", sum, ["fire", "psychic", "grass", "poison"])).toEqual([{ qtd: 1, percent: "33.33", status: "fire" }])
   })
 })

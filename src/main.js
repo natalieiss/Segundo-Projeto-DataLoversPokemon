@@ -82,21 +82,15 @@ selectOrder.addEventListener("change", (e) => {
   arrPokemonOrder = []
   let changeOrder = e.target.value
   if (changeOrder === 'none') {
-    console.log("none")
-    console.log(data.pokemon)
     smallCardPokemon(orderData(data.pokemon, "num"), cardSmall)
-    console.log(smallCardPokemon(data.pokemon, cardSmall))
   } else if (arrPokemon.length === 0 && changeOrder !== 'none') {
-    console.log("outro if ")
     arrPokemonOrder = orderData(data.pokemon, changeOrder)
     smallCardPokemon(arrPokemonOrder, cardSmall)
   } else {
-    console.log("else")
     arrPokemonOrder = orderData(arrPokemon, changeOrder)
     smallCardPokemon(arrPokemonOrder, cardSmall)
   }
 })
-console.log(data.pokemon)
 sectionCardsPokemon.addEventListener("click", (e) => {
   let extensionW = window.screen.width
   const { target } = e;
@@ -119,7 +113,6 @@ sectionCardsPokemon.addEventListener("click", (e) => {
     const arrWithoutRepeat = createArrWithoutRepeat(arrWithAllStatus)
     const sum = percentOfProperty(arrWithAllStatus, arrWithoutRepeat, pokemon)
     const sumProperty = showSumArr(onePokemon, "type", sum, arrWithoutRepeat)
-    console.log(sumProperty)
 
 
     for (let line of sumProperty) {
@@ -132,7 +125,6 @@ sectionCardsPokemon.addEventListener("click", (e) => {
       )
 
     }
-    //criar um for...of com um template
   }
   if (extensionW <= 600) {
     window.scrollTo(0, 1000)

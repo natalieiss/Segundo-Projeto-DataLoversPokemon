@@ -1,7 +1,5 @@
 export const smallCardPokemon = (arrPokemon, cardSmall) => {
-  console.log("card small")
   cardSmall.innerHTML = ""
-  console.log(arrPokemon)
   arrPokemon.forEach((onePokemon, index) => {
     let saveType = ""
     for (let oneTypePokemon of onePokemon.type) {
