@@ -69,7 +69,7 @@ O logo foi pensado e construído para que remetece a uma enciclopédia e ao jogo
 
 ## Protótipo
 
-O Protótipo inicial da surgiu da ideia de criar uma interface que parecesse uma pokédex.
+O Protótipo inicial surgiu da ideia de criar uma interface que parecesse uma pokédex.
 
 Favicon.
 
