@@ -72,13 +72,11 @@ export const showSumArr = (onePokemon, statusPokemon, sum, arrWithoutRepeat) => 
       for (let type of onePokemon[statusPokemon]) {
         if (type === status) {
           arrReturn.push(sum[status])
-          console.log("type", arrReturn)
         }
       }
     } else {
       if (onePokemon[statusPokemon] === status) {
         arrReturn = [sum[status]]
-        console.log("rarity", arrReturn)
       }
     }
   })
