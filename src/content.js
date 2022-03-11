@@ -1,7 +1,5 @@
 export const smallCardPokemon = (arrPokemon, cardSmall) => {
-  console.log("card small")
   cardSmall.innerHTML = ""
-  console.log(arrPokemon)
   arrPokemon.forEach((onePokemon, index) => {
     let saveType = ""
     for (let oneTypePokemon of onePokemon.type) {
@@ -185,7 +183,6 @@ export const apearBigCardPokemon = (showPokemonBig, onePokemon) => {
         }
       }
     }
-
   }
 
   const generationPokemon = onePokemon.generation
@@ -194,7 +191,6 @@ export const apearBigCardPokemon = (showPokemonBig, onePokemon) => {
       <p class="paragraph-big"><b>Generation Number: </b>${generationPokemon['num']}</p>
       <p class="paragraph-big"><b>Generation Name: </b>${generationPokemon['name']}</p>
     </div>`)
-
 
   const encounterPokemon = onePokemon.encounter
   showPokemonBig.insertAdjacentHTML('beforeend', `
