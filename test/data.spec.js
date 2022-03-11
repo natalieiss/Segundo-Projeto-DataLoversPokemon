@@ -6,6 +6,7 @@ const arrTest = [
   {
     "num": "001",
     "name": "bulbasaur",
+    "pokemon-rarity": "normal",
     "type": [
       "grass",
       "poison"
@@ -28,6 +29,7 @@ const arrTest = [
   {
     "num": "150",
     "name": "mewtwo",
+    "pokemon-rarity": "legendary",
     "type": [
       "psychic"
     ],
@@ -49,6 +51,7 @@ const arrTest = [
   {
     "num": "038",
     "name": "ninetales",
+    "pokemon-rarity": "normal",
     "type": [
       "fire"
     ],
@@ -78,6 +81,7 @@ describe('orderData', () => {
       {
         "num": "150",
         "name": "mewtwo",
+        "pokemon-rarity": "legendary",
         "type": [
           "psychic"
         ],
@@ -99,6 +103,7 @@ describe('orderData', () => {
       {
         "num": "038",
         "name": "ninetales",
+        "pokemon-rarity": "normal",
         "type": [
           "fire"
         ],
@@ -119,6 +124,7 @@ describe('orderData', () => {
       {
         "num": "001",
         "name": "bulbasaur",
+        "pokemon-rarity": "normal",
         "type": [
           "grass",
           "poison"
@@ -146,6 +152,7 @@ describe('orderData', () => {
       {
         "num": "001",
         "name": "bulbasaur",
+        "pokemon-rarity": "normal",
         "type": [
           "grass",
           "poison"
@@ -168,6 +175,7 @@ describe('orderData', () => {
       {
         "num": "038",
         "name": "ninetales",
+        "pokemon-rarity": "normal",
         "type": [
           "fire"
         ],
@@ -188,6 +196,7 @@ describe('orderData', () => {
       {
         "num": "150",
         "name": "mewtwo",
+        "pokemon-rarity": "legendary",
         "type": [
           "psychic"
         ],
@@ -214,6 +223,7 @@ describe('orderData', () => {
       {
         "num": "001",
         "name": "bulbasaur",
+        "pokemon-rarity": "normal",
         "type": [
           "grass",
           "poison"
@@ -236,6 +246,7 @@ describe('orderData', () => {
       {
         "num": "150",
         "name": "mewtwo",
+        "pokemon-rarity": "legendary",
         "type": [
           "psychic"
         ],
@@ -257,6 +268,7 @@ describe('orderData', () => {
       {
         "num": "038",
         "name": "ninetales",
+        "pokemon-rarity": "normal",
         "type": [
           "fire"
         ],
@@ -283,6 +295,7 @@ describe('orderData', () => {
       {
         "num": "038",
         "name": "ninetales",
+        "pokemon-rarity": "normal",
         "type": [
           "fire"
         ],
@@ -303,6 +316,7 @@ describe('orderData', () => {
       {
         "num": "150",
         "name": "mewtwo",
+        "pokemon-rarity": "legendary",
         "type": [
           "psychic"
         ],
@@ -324,6 +338,7 @@ describe('orderData', () => {
       {
         "num": "001",
         "name": "bulbasaur",
+        "pokemon-rarity": "normal",
         "type": [
           "grass",
           "poison"
@@ -351,6 +366,7 @@ describe('orderData', () => {
       {
         "num": "001",
         "name": "bulbasaur",
+        "pokemon-rarity": "normal",
         "type": [
           "grass",
           "poison"
@@ -373,6 +389,7 @@ describe('orderData', () => {
       {
         "num": "038",
         "name": "ninetales",
+        "pokemon-rarity": "normal",
         "type": [
           "fire"
         ],
@@ -393,6 +410,7 @@ describe('orderData', () => {
       {
         "num": "150",
         "name": "mewtwo",
+        "pokemon-rarity": "legendary",
         "type": [
           "psychic"
         ],
@@ -419,6 +437,7 @@ describe('orderData', () => {
       {
         "num": "001",
         "name": "bulbasaur",
+        "pokemon-rarity": "normal",
         "type": [
           "grass",
           "poison"
@@ -441,6 +460,7 @@ describe('orderData', () => {
       {
         "num": "038",
         "name": "ninetales",
+        "pokemon-rarity": "normal",
         "type": [
           "fire"
         ],
@@ -461,6 +481,7 @@ describe('orderData', () => {
       {
         "num": "150",
         "name": "mewtwo",
+        "pokemon-rarity": "legendary",
         "type": [
           "psychic"
         ],
@@ -486,6 +507,7 @@ describe('orderData', () => {
     expect(orderData(arrTest, 'weaknesses')[2]).toStrictEqual({
       "num": "001",
       "name": "bulbasaur",
+      "pokemon-rarity": "normal",
       "type": [
         "grass",
         "poison"
@@ -511,6 +533,7 @@ describe('orderData', () => {
 const onePokemon = {
   "num": "038",
   "name": "ninetales",
+  "pokemon-rarity": "normal",
   "type": [
     "fire"
   ],
@@ -537,6 +560,7 @@ describe('filterByType', () => {
     expect(filterByType(arrTest, 'fire')).toEqual([{
       "num": "038",
       "name": "ninetales",
+      "pokemon-rarity": "normal",
       "type": [
         "fire"
       ],
@@ -569,6 +593,7 @@ describe("typeName", () => {
     expect(typeName(arrTest, "bul")).toEqual([{
       "num": "001",
       "name": "bulbasaur",
+      "pokemon-rarity": "normal",
       "type": [
         "grass",
         "poison"
