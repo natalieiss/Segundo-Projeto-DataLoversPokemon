@@ -1,7 +1,19 @@
 
+import { it } from 'eslint/lib/rule-tester/rule-tester';
 import { orderData, filterByType, typeName, createPropertyArr, createArrWithoutRepeat, percentOfProperty, showSumArr } from '../src/data.js';
 
 const arrTest0 = ["fire", "fire", "fire", "grass", "grass", "water"]
+const arrTestName = [{
+  "name": "ninetales"
+},
+{
+  "name": "mewtwo"
+},
+{
+  "name": "bulbasaur"
+}
+]
+
 const arrTest = [
   {
     "num": "001",
@@ -68,6 +80,18 @@ const arrTest = [
       "ground",
       "rock"
     ],
+  }
+]
+
+const arrTest1 = [
+  {
+    "name": "bulbasaur"
+  },
+  {
+    "name": "ninetales"
+  },
+  {
+    "name": "mewtwo"
   }
 ]
 
@@ -147,6 +171,10 @@ describe('orderData', () => {
     ])
   });
 
+  it('should return "[bulbasaur]" for "name-az" with arrTest1', () => {
+    expect(orderData(arrTest1, "name-az")[0].name).toEqual("bulbasaur")
+  })
+
   it('should return "[bulbasaur, ninetales, mewtwo]" for "smaller-max-cp" with array arrTest', () => {
     expect(orderData(arrTest, 'smaller-max-cp')).toStrictEqual([
       {
@@ -219,74 +247,15 @@ describe('orderData', () => {
   });
 
   it('should return "[bulbasaur, mewtwo, ninetales]" for "name-az" with array arrTest', () => {
-    expect(orderData(arrTest, 'name-az')).toStrictEqual([
-      {
-        "num": "001",
-        "name": "bulbasaur",
-        "pokemon-rarity": "normal",
-        "type": [
-          "grass",
-          "poison"
-        ],
-        "spawn-chance": "0.69",
-        "stats": {
-          "base-attack": "118",
-          "base-defense": "111",
-          "base-stamina": "128",
-          "max-cp": "1115",
-          "max-hp": "113"
-        },
-        "weaknesses": [
-          "fire",
-          "ice",
-          "flying",
-          "psychic"
-        ],
-      },
-      {
-        "num": "150",
-        "name": "mewtwo",
-        "pokemon-rarity": "legendary",
-        "type": [
-          "psychic"
-        ],
-        "spawn-chance": "0",
-        "stats": {
-          "base-attack": "300",
-          "base-defense": "182",
-          "base-stamina": "214",
-          "max-cp": "4178",
-          "max-hp": "180"
-        },
-
-        "weaknesses": [
-          "bug",
-          "ghost",
-          "dark"
-        ],
-      },
-      {
-        "num": "038",
-        "name": "ninetales",
-        "pokemon-rarity": "normal",
-        "type": [
-          "fire"
-        ],
-        "spawn-chance": "0.0077",
-        "stats": {
-          "base-attack": "169",
-          "base-defense": "190",
-          "base-stamina": "177",
-          "max-cp": "2279",
-          "max-hp": "151"
-        },
-        "weaknesses": [
-          "water",
-          "ground",
-          "rock"
-        ],
-      },
-
+    expect(orderData(arrTestName, 'name-az')).toStrictEqual([{
+      "name": "bulbasaur"
+    },
+    {
+      "name": "mewtwo"
+    },
+    {
+      "name": "ninetales"
+    }
     ])
   });
 
@@ -360,6 +329,7 @@ describe('orderData', () => {
       }
     ])
   });
+
 
   it('should return "[bulbasaur, mewtwo, ninetales]" for "num" with array arrTest', () => {
     expect(orderData(arrTest, 'num')).toStrictEqual([
@@ -646,12 +616,17 @@ describe("percentOfProperty", () => {
 })
 
 const sum = percentOfProperty(["fire", "psychic", "grass", "poison"], ["fire", "psychic", "grass", "poison"], arrTest)
-//export const showSumArr = (onePokemon, statusPokemon, sum, arrWithoutRepeat)
+const sum1 = percentOfProperty(["normal", "legendary", "normal"], ["normal", "legendary"], arrTest)
+
 describe("showSumArr", () => {
   it('is a function', () => {
     expect(typeof showSumArr).toBe('function')
   })
-  it('Should return "{qtd: 22, percent: "8.76", status: "fire"}"', () => {
+  it('Should return "{qtd: 1, percent: "33.33", status: "fire"}"', () => {
     expect(showSumArr(onePokemon, "type", sum, ["fire", "psychic", "grass", "poison"])).toEqual([{ qtd: 1, percent: "33.33", status: "fire" }])
+  })
+
+  it('Should return "{qtd: 2, percent: "66.66", status: "normal"}"', () => {
+    expect(showSumArr(onePokemon, "pokemon-rarity", sum1, ["normal", "legendary"])).toEqual([{ qtd: 2, percent: "66.67", status: "normal" }])
   })
 })

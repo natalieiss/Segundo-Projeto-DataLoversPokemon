@@ -99,8 +99,9 @@ A tela inicial tem a cor de uma pokébola, já a segunda tela tem as cores da po
 Trouxemos um personagem na tela inicial que poderia causar nostálgia aos fãs de Pokémon.
 
 # Testes Unitários
+Criamos os testes unitários para o arquivo data.js.
 
-
+<img src="./readmeimg/teste.png" alt="Testes" width="500">
 
 # Deploy
 
@@ -121,8 +122,8 @@ Acessando o endereço web (URL) o usuário já estará apto a utilizar todas as 
 
 # Autoras
 
-- [@natalieiss](https://github.com/natalieiss)
-- [@MonicaGuimaraes](https://github.com/MonicaGuimaraes)
+- [@natalieiss](https://github.com/natalieiss) > Natalie I. S. Santos
+- [@MonicaGuimaraes](https://github.com/MonicaGuimaraes) > Mônica Peixoto Guimarães
 
 ## 🔗 Links
 
