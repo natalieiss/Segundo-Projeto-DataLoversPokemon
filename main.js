@@ -9,7 +9,10 @@ import {
   filterByType,
   orderData,
   typeName,
-  mathWithStr
+  createPropertyArr,
+  createArrWithoutRepeat,
+  percentOfProperty,
+  showSumArr
 } from "./data.js"
 
 const pokemon = data.pokemon
@@ -21,7 +24,6 @@ let filterTypes = document.querySelector('#type')
 let sectionCardsPokemon = document.querySelector("[data-section]")
 let cardSmall = document.getElementById('card-pokemon')
 let showPokemonBig = document.getElementById('card-pokemon-big')
-
 
 optionTypesHtml(pokemon, filterTypes)
 
@@ -79,21 +81,16 @@ selectOrder.addEventListener("change", (e) => {
   arrPokemonOrder = []
   let changeOrder = e.target.value
   if (changeOrder === 'none') {
-    console.log("none")
-    console.log(data.pokemon)
     smallCardPokemon(orderData(data.pokemon, "num"), cardSmall)
-    console.log(smallCardPokemon(data.pokemon, cardSmall))
   } else if (arrPokemon.length === 0 && changeOrder !== 'none') {
-    console.log("outro if ")
     arrPokemonOrder = orderData(data.pokemon, changeOrder)
     smallCardPokemon(arrPokemonOrder, cardSmall)
   } else {
-    console.log("else")
     arrPokemonOrder = orderData(arrPokemon, changeOrder)
     smallCardPokemon(arrPokemonOrder, cardSmall)
   }
 })
-console.log(data.pokemon)
+
 sectionCardsPokemon.addEventListener("click", (e) => {
   let extensionW = window.screen.width
   const { target } = e;
@@ -112,9 +109,21 @@ sectionCardsPokemon.addEventListener("click", (e) => {
     }
 
     apearBigCardPokemon(showPokemonBig, onePokemon)
-    console.log(mathWithStr(pokemon, "type", onePokemon)) //estudar
+    const arrWithAllStatus = createPropertyArr(pokemon, "type")
+    const arrWithoutRepeat = createArrWithoutRepeat(arrWithAllStatus)
+    const sum = percentOfProperty(arrWithAllStatus, arrWithoutRepeat, pokemon)
+    const sumProperty = showSumArr(onePokemon, "type", sum, arrWithoutRepeat)
+
+    for (let line of sumProperty) {
+      showPokemonBig.insertAdjacentHTML('beforeend', `
+      <div class="pattern">
+        <p class="paragraph-big"><b>Number of ${line.status} pokemons: ${line.qtd}</b></p>
+        <p class="paragraph-big"><b>Percentage of ${line.status} pokemons: ${line.percent}%</b></p>
+      </div>`
+      )
+    }
   }
   if (extensionW <= 600) {
     window.scrollTo(0, 1000)
   }
-});
+})

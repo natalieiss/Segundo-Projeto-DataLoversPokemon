@@ -30,7 +30,7 @@ export const orderData = (arrPokemon, orderType) => {
 }
 
 export const filterByType = (data, selectFilter) =>
-  data.filter((pokemon) => pokemon.type.includes(selectFilter)) //includes funciona assim: se selecionei o tipo bug ele entra no include que pesquisa bug dentro do pokemon.type
+  data.filter((pokemon) => pokemon.type.includes(selectFilter))
 
 export const typeName = (data, inputLetterName) => {
   return (data.filter((pokemon) =>
@@ -38,36 +38,34 @@ export const typeName = (data, inputLetterName) => {
   ))
 }
 
-export const mathWithStr = (arrPokemon, statusPokemon, onePokemon) => {
+export const createPropertyArr = (arrPokemon, statusPokemon) => {
   let arrWithAllStatus = []
+  let arr = arrPokemon.map((pokemon) => pokemon[statusPokemon])
+  arrWithAllStatus = arr.flat()
+  return arrWithAllStatus
+}
 
-  if (typeof (arrPokemon[0][statusPokemon]) == 'object') {
-    let arr = arrPokemon.map((pokemon) => pokemon[statusPokemon])
-    arrWithAllStatus = arr.flat()
-
-    console.log("if", arrWithAllStatus)
-  } else {
-    arrWithAllStatus = arrPokemon.map((pokemon) => pokemon[statusPokemon])
-    console.log("else", arrWithAllStatus)
-  }
-
-  // eslint-disable-next-line no-undef
+export const createArrWithoutRepeat = (arrWithAllStatus) => {
+  //eslint-disable-next-line
   const arrWithoutRepeat = [...new Set(arrWithAllStatus)]
-  console.log("sem repetição", arrWithoutRepeat)
+  return arrWithoutRepeat
+}
 
-
-  const sum = Object.create(null); //estudar muito
+export const percentOfProperty = (arrWithAllStatus, arrWithoutRepeat, arrPokemon) => {
+  const sum = Object.create(null);
   let qtd = 0
   for (let status of arrWithoutRepeat) {
-    console.log(typeof status)
     qtd = 0
     for (var i = 0; i < arrWithAllStatus.length; i++) {
       if (arrWithAllStatus[i] === status) qtd++
     }
     let percent = ((qtd / arrPokemon.length) * 100).toFixed([2])
-    sum[status] = [qtd, percent, status]; //estudar muito
-    console.log(sum[status])
+    sum[status] = { qtd, percent, status }
   }
+  return sum
+}
+
+export const showSumArr = (onePokemon, statusPokemon, sum, arrWithoutRepeat) => {
   let arrReturn = []
   arrWithoutRepeat.forEach(function (status) {
     if (typeof (onePokemon[statusPokemon]) == 'object') {
@@ -75,17 +73,12 @@ export const mathWithStr = (arrPokemon, statusPokemon, onePokemon) => {
         if (type === status) {
           arrReturn.push(sum[status])
         }
-        else {
-          if (onePokemon[statusPokemon] === status) {
-            arrReturn = sum[status]
-          }
-        }
+      }
+    } else {
+      if (onePokemon[statusPokemon] === status) {
+        arrReturn = [sum[status]]
       }
     }
   })
-
-
-  console.log(sum)
-  console.log(sum['grass'])
   return arrReturn
 }

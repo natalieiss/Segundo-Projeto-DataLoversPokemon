@@ -164,7 +164,7 @@
 }
 
 .scrollbar-pattern::-webkit-scrollbar-track{
-	-webkit-box-shadow: inset 0 0 6px var(--shadow);
+	box-shadow: inset 0 0 6px var(--shadow);
 	background-color: transparent;
 }
 
