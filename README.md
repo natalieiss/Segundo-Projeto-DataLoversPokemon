@@ -112,7 +112,7 @@ Trouxemos um personagem na tela inicial que poderia causar nostálgia aos fãs d
 # Testes Unitários
 Criamos os testes unitários para o arquivo data.js.
 
-<img src="./readmeimg/teste.png" alt="Testes" width="500">
+<img src="./readmeimg/Teste.png" alt="Testes" width="500">
 
 # Deploy
 
