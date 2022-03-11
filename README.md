@@ -19,6 +19,9 @@ Dados por si só não são considerados informações, em um contexto onde os ú
 O Projeto Data-Lovers da Laboratória propõe criar uma interface e trabalhar com esses dados soltos para que os dados virem informações legíveis por usuários na internet.
 
 # Resumo do Projeto
+
+<img src="./readmeimg/gengar.jpg" alt="Protótipo de alta fidelidade" width="200">
+
 No nosso segundo projeto, denominado data-lovers, tivemos a chance de escolher o tema de dados que iriamos trabalhar e optamos por um projeto baseado em Pokemon em razão de grande afinidade.
 
 Neste projeto trabalhamos com um banco de dados robusto, manipulação de objetos dentro de arrays e matrizes de arrays.
@@ -39,6 +42,8 @@ Criamos também protótipos e nos organizamos através do trello. Os protótipos
 7. O aplicativo Web possui dua páginas interativas: homepage e a pokédex.
 
 ## Usuário
+
+<img src="./readmeimg/threepokemons.png" alt="pokemon" width="300">
 
 O universo pokémon foi criado em 1995 e ainda atualmente é visto como uma "febre mundial" que cresceu ainda mais com a criação da franquia de Pokémon Go responsável por trazer o mundo dos monstrinhos para a interface dos dispositivos móveis, ampliando ainda mais o público alvo.
 
