@@ -109,6 +109,10 @@ Nos últimos protótipos de baixa fidelidade definimos a ideia que seguiriamos p
 A tela inicial tem a cor de uma pokébola, já a segunda tela tem as cores da pokédex.
 Trouxemos um personagem na tela inicial que poderia causar nostálgia aos fãs de Pokémon.
 
+### Testes de Usabilidade
+
+Após o projeto finalizado, fizemos com que algumas pessoas utilizassem o app web e recebemos feedbacks positivos em relação a interação com a interface para obter as informações que necessitavam. Três pessoas participaram desse teste.
+
 # Testes Unitários
 Criamos os testes unitários para o arquivo data.js.
 
