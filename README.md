@@ -7,6 +7,7 @@
 - [Usuário](#Usuário)
 - [Logo](#Logo)
 - [Protótipo](#Protótipo)
+- [Testes de Usabilidade](#Testes-de-Usabilidade)
 - [Testes Unitários](#Testes-Unitários)
 - [Deploy](#Deploy)
 - [Recursos utilizados](#Recursos-utilizados)
