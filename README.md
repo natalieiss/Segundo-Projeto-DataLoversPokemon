@@ -111,16 +111,44 @@ Cards da página 2.
 <img src="./readmeimg/Group3(1).png" alt="Protótipo de alta fidelidade" width="200">
 </p>
 Após os primeiros protótipos saírem pedimos opiniões de usuários fãs de Pokémons, a maioria relatou que os protótipos inicias estavam indo na direção certa, e indicaram o que gostariam de ver em um site relacionado ao tema:
-- Cores das pokébolas;
+- Cores das pokebolas;
 - Algo mais limpo e fácil de achar os dados para o jogo.
 
 Nos últimos protótipos de baixa fidelidade definimos a ideia que seguiriamos para o protótipo final.
-A tela inicial tem a cor de uma pokébola, já a segunda tela tem as cores da pokédex.
+A tela inicial tem a cor de uma pokebola, já a segunda tela tem as cores da pokédex.
 Trouxemos um personagem na tela inicial que poderia causar nostálgia aos fãs de Pokémon.
 
 ### Testes de Usabilidade
 
 Após o projeto finalizado, fizemos com que algumas pessoas utilizassem o app web e recebemos feedbacks positivos em relação a interação com a interface para obter as informações que necessitavam. Três pessoas participaram desse teste.
+
+# Projeto Finalizado
+
+<p align="center">
+<img src="./readmeimg/filtrarordenar.png" alt="ipad visualização" width="700">
+</p>
+
+<p align="center">
+<img src="./readmeimg/indexhtml(iPad).png" alt="ipad visualização" width="300">
+</p>
+
+<p align="center">
+<img src="./readmeimg/pokedexhtml(iPad)1.png" alt="ipad visualização" width="300">
+</p>
+
+
+<p align="center">
+<img src="./readmeimg/pokedexhtml(iPad).png" alt="ipad visualização" width="300">
+</p>
+
+<p align="center">
+<img src="./readmeimg/pokedexhtml(iPhone6_7_8Plus).png" alt="iPhone visualização" width="200">
+</p>
+
+<p align="center">
+<img src="./readmeimg/pokedexhtml(iPhone6_7_8Plus)(1).png" alt="iPhone visualização" width="200">
+</p>
+
 
 # Testes Unitários
 Criamos os testes unitários para o arquivo data.js. Este é o arquivo onde as funções de filtragem, ordenação e cálculos agregados se encontram.
