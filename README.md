@@ -20,17 +20,10 @@ Dados por si só não são considerados informações, em um contexto onde os ú
 O Projeto Data-Lovers da Laboratória propõe criar uma interface e trabalhar com esses dados soltos para que os dados virem informações legíveis por usuários na internet.
 
 # Resumo do Projeto
-<<<<<<< HEAD
-
-<img src="./readmeimg/gengar.jpg" alt="Protótipo de alta fidelidade" width="200">
-
-No nosso segundo projeto, denominado data-lovers, tivemos a chance de escolher o tema de dados que iriamos trabalhar e optamos por um projeto baseado em Pokémon, em razão de grande afinidade.
-=======
 <p align="center">
 <img src="./readmeimg/gengar.jpg" alt="Protótipo de alta fidelidade" width="300">
 </p>
 No nosso segundo projeto, denominado data-lovers, tivemos a chance de escolher o tema de dados que iriamos trabalhar e optamos por um projeto baseado em Pokemon em razão de grande afinidade.
->>>>>>> 8abe5e84dc315b283ffb641500377b1b99222005
 
 Neste projeto trabalhamos com um banco de dados robusto, manipulação de objetos dentro de arrays e matrizes de arrays.
 
