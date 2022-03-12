@@ -15,21 +15,28 @@
 
 # DATA-LOVERS
 
-Dados por si só não são considerados informações, em um contexto onde os últimos anos foram os anos que mais geraram dados, precisamos pensar que os mesmos fora de contexto podem confundir usuários que tentam lê-los.
+Dados por si só não são considerados informações, em um contexto onde os últimos anos foram os anos que mais geraram dados, desta forma, é necessário pensar que os mesmos fora de contexto podem confundir usuários que tentam lê-los.
 
 O Projeto Data-Lovers da Laboratória propõe criar uma interface e trabalhar com esses dados soltos para que os dados virem informações legíveis por usuários na internet.
 
 # Resumo do Projeto
+<<<<<<< HEAD
+
+<img src="./readmeimg/gengar.jpg" alt="Protótipo de alta fidelidade" width="200">
+
+No nosso segundo projeto, denominado data-lovers, tivemos a chance de escolher o tema de dados que iriamos trabalhar e optamos por um projeto baseado em Pokémon, em razão de grande afinidade.
+=======
 <p align="center">
 <img src="./readmeimg/gengar.jpg" alt="Protótipo de alta fidelidade" width="300">
 </p>
 No nosso segundo projeto, denominado data-lovers, tivemos a chance de escolher o tema de dados que iriamos trabalhar e optamos por um projeto baseado em Pokemon em razão de grande afinidade.
+>>>>>>> 8abe5e84dc315b283ffb641500377b1b99222005
 
 Neste projeto trabalhamos com um banco de dados robusto, manipulação de objetos dentro de arrays e matrizes de arrays.
 
-Inicialmente, utilizamos as histórias de usuário fornecidas pela Laboratória e com base nesses dados traçamos as estratégias necessárias para melhorar a experiência dos usuários e atender suas expectativas. Após essa etapa criamos uma série de tarefas para atingir os objetivos determinados pelos usuários.
+Inicialmente, utilizamos as histórias de usuário fornecidas pela Laboratória e com base nesses dados traçamos as estratégias necessárias para melhorar a experiência dos usuários e atender suas expectativas. Após essa etapa, criamos uma série de tarefas para atingir os objetivos determinados pelos usuários.
 
-Criamos também protótipos e nos organizamos através do trello. Os protótipos foram utilizados para recolher avaliações de possíveis usuários bem como seus feedbacks.
+Criamos também protótipos e nos organizamos através do aplicativo web Trello. Os protótipos foram utilizados para recolher avaliações de possíveis usuários bem como seus feedbacks.
 
 # Interface do Usuário
 
@@ -38,32 +45,47 @@ Criamos também protótipos e nos organizamos através do trello. Os protótipos
    necessita;
 3. Permite ao usuário fazer uma filtragem por tipo e nome;
 4. Permite ao usuário ordenar de A-Z, Z-A, por Chance de Spawn, Fraqueza e Numeração;
-5. Permite ao usuário visualizar a porcentagem dos tipos e raridade.
+5. Permite ao usuário visualizar a porcentagem dos tipos e raridade;
 6. A interface é responsiva;
-7. O aplicativo Web possui dua páginas interativas: homepage e a pokédex.
+7. O aplicativo Web possui dua páginas interativas: homepage e a pokédex;
 
 ## Usuário
 <p align="center">
 <img src="./readmeimg/threepokemons.png" alt="pokemon" width="300">
-</p>
-O universo pokémon foi criado em 1995 e ainda atualmente é visto como uma "febre mundial" que cresceu ainda mais com a criação da franquia de Pokémon Go responsável por trazer o mundo dos monstrinhos para a interface dos dispositivos móveis, ampliando ainda mais o público alvo.
+<<<<<<< HEAD
 
-Desta forma, o presente aplicativo web é destinado a usuários de todas as idades que acompanham tanto a franquia de games quanto as séries de Pokémon. Também é destinado a novos usuários, tendo como principal objetivo proporcionar uma experiência única e divertida para todos incluindo também a sensação de nostalgia por tratar-se de uma interface intuitiva e relativamente simples por remeter ao padrão de formatação dos games de Gameboy Color com botões e overflow que lembram o Windows 98.
+O universo pokémon foi criado em 1995 e, ainda atualmente, é visto como uma "febre mundial" que cresceu ainda mais com a criação da franquia de Pokémon Go, responsável por trazer o mundo dos monstrinhos para a interface dos dispositivos móveis ampliando ainda mais o público alvo.
+
+Desta forma, o presente aplicativo web é destinado a usuários de todas as idades que acompanham tanto a franquia de games quanto as séries de Pokémon. Também é destinado a novos usuários, tendo como principal objetivo proporcionar uma experiência única e divertida para todos incluindo também a sensação de nostalgia por tratar-se de uma interface intuitiva e relativamente simples que remete ao padrão de formatação dos games de Game Boy Color, com botões e overflow que lembram os aplicativos antigos de Windows 98.
+
+As histórias de usuário ja encontravam-se pré definidas e disponibilizadas no repositório de proposta do projeto da Laboratória. Contudo, acrescentamos a história de usuário 6.
+
+<b>História de Usuário 1 -</b> "Os Pokémons têm características únicas que determinam as decisões tomadas pelo usuário (tipo, fraqueza, peso, multiplicador, etc.)."
 <p align="center">
 <img src="./readmeimg/1historiadeusuario.png" alt="usuários" width="700">
 </p>
+
+<b>História de Usuário 2 - "Um mestre Pokémon antes de sair para caçar os Pokémons tem que conhecer os 10 principais Pokémons que aparecem com mais frequência."
 <p align="center">
 <img src="./readmeimg/2historiadeusuario.png" alt="usuários" width="700">
 </p>
+
+<b>História de Usuário 3 -</b> "Os Pokémons têm diferentes tipos e fraquezas em combate. Estas características são importantes na escolha do Pokémon mais adequado para sua batalha. Às vezes, você tem que escolher aqueles com menos fraquezas e saber de que tipo eles são. Portanto, é importante que um mestre de Pokémon seja capaz de ordená-los por essas 2 características."
 <p align="center">
 <img src="./readmeimg/3historiadeusuario.png" alt="usuários" width="700">
 </p>
+
+<b>História de Usuário 4 -</b> "Os Pokémons evoluem e é importante para um mestre Pokémon saber quantas e quais evoluções eles têm antes e depois."
 <p align="center">
 <img src="./readmeimg/4historiadeusuario.png" alt="usuários" width="700">
 </p>
+
+<b>História de Usuário 5 -</b> "Pokémons comem candies e um mestre Pokémon precisa saber quantos candies um Pokémon precisa para evoluir."
 <p align="center">
 <img src="./readmeimg/5historiadeusuario.png" alt="usuários" width="700">
 </p>
+
+<b>História de Usuário 6 (de autoria das desenvolvedoras) -</b> "Filtragem pelos tipos dos pokémons (fire, grass, electric, flying, steel, water, psychic, ghost, poison, bug, normal, rock, ice, dragon, dark e fairy)
 <p align="center">
 <img src="./readmeimg/6historiadeusuario.png" alt="usuários" width="700">
 </p>
@@ -169,8 +191,9 @@ Acessando o endereço web (URL) o usuário já estará apto a utilizar todas as 
 # Recursos utilizados
 
 - Java Script Vanilla
-- CSS
-- HTML
+- CSS3
+- HTML5
+- Visual Studio Code
 
 # Autoras
 
