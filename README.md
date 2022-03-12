@@ -52,7 +52,6 @@ Criamos também protótipos e nos organizamos através do aplicativo web Trello.
 ## Usuário
 <p align="center">
 <img src="./readmeimg/threepokemons.png" alt="pokemon" width="300">
-<<<<<<< HEAD
 
 O universo pokémon foi criado em 1995 e, ainda atualmente, é visto como uma "febre mundial" que cresceu ainda mais com a criação da franquia de Pokémon Go, responsável por trazer o mundo dos monstrinhos para a interface dos dispositivos móveis ampliando ainda mais o público alvo.
 
@@ -132,11 +131,12 @@ Cards da página 2.
 <p align="center">
 <img src="./readmeimg/Group3(1).png" alt="Protótipo de alta fidelidade" width="200">
 </p>
+
 Após os primeiros protótipos saírem pedimos opiniões de usuários fãs de Pokémons, a maioria relatou que os protótipos inicias estavam indo na direção certa, e indicaram o que gostariam de ver em um site relacionado ao tema:
 - Cores das pokebolas;
 - Algo mais limpo e fácil de achar os dados para o jogo.
 
-Nos últimos protótipos de baixa fidelidade definimos a ideia que seguiriamos para o protótipo final.
+Nos últimos protótipos de baixa fidelidade definimos a ideia que seguiriamos para o protótipo final. Vetorizamos algumas .
 A tela inicial tem a cor de uma pokebola, já a segunda tela tem as cores da pokédex.
 Trouxemos um personagem na tela inicial que poderia causar nostálgia aos fãs de Pokémon.
 
@@ -145,6 +145,14 @@ Trouxemos um personagem na tela inicial que poderia causar nostálgia aos fãs d
 Após o projeto finalizado, fizemos com que algumas pessoas utilizassem o app web e recebemos feedbacks positivos em relação a interação com a interface para obter as informações que necessitavam. Três pessoas participaram desse teste.
 
 # Projeto Finalizado
+
+<p align="center">
+<img src="./readmeimg/paginainicial.png" alt="ipad visualização" width="700">
+</p>
+
+<p align="center">
+<img src="./readmeimg/pesquisa.png" alt="ipad visualização" width="700">
+</p>
 
 <p align="center">
 <img src="./readmeimg/filtrarordenar.png" alt="ipad visualização" width="700">
