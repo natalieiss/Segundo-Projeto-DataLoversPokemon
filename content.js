@@ -129,7 +129,7 @@ export const apearBigCardPokemon = (showPokemonBig, onePokemon) => {
           showPokemonBig.insertAdjacentHTML('beforeend', `
           <div class="pattern">
             <p class="paragraph-big"><b>Next Evolution Number: </b>${evolutionValueTwo['num']}</p>
-            <p class="paragraph-big"><b>Net Evolution Name: </b>${evolutionValueTwo['name']}</p>
+            <p class="paragraph-big"><b>Next Evolution Name: </b>${evolutionValueTwo['name']}</p>
             <p class="paragraph-big"><b>Next Evolution Candy Cost: </b>${evolutionValueTwo['candy-cost']}</p>
           </div>`
           )
@@ -142,7 +142,6 @@ export const apearBigCardPokemon = (showPokemonBig, onePokemon) => {
             )
           }
         }
-
       }
     }
   }
@@ -151,9 +150,9 @@ export const apearBigCardPokemon = (showPokemonBig, onePokemon) => {
     for (let valuePrevEvolution of prevEvolution) {
       showPokemonBig.insertAdjacentHTML('beforeend', `
       <div class="pattern">
-        <p class="paragraph-big"><b>Number: </b>${valuePrevEvolution['num']}</p>
-        <p class="paragraph-big"><b>Name: </b>${valuePrevEvolution['name']}</p>
-        <p class="paragraph-big"><b>Candy cost: </b>${valuePrevEvolution['candy-cost']}</p>
+        <p class="paragraph-big"><b>Previous Evolution Number: </b>${valuePrevEvolution['num']}</p>
+        <p class="paragraph-big"><b>Previous Evolution Name: </b>${valuePrevEvolution['name']}</p>
+        <p class="paragraph-big"><b>Previous Evolution Candy cost: </b>${valuePrevEvolution['candy-cost']}</p>
       </div>`
       )
       if (valuePrevEvolution["evolution-item"]) {
@@ -168,9 +167,9 @@ export const apearBigCardPokemon = (showPokemonBig, onePokemon) => {
         for (let valuePrevEvolutionTwo of prevPrevEvolution) {
           showPokemonBig.insertAdjacentHTML('beforeend', `
             <div class="pattern">
-              <p class="paragraph-big"><b>Number: </b>${valuePrevEvolutionTwo['num']}</p>
-              <p class="paragraph-big"><b>Name: </b>${valuePrevEvolutionTwo['name']}</p>
-              <p class="paragraph-big"><b>Candy cost: </b>${valuePrevEvolutionTwo['candy-cost']}</p>
+              <p class="paragraph-big"><b>Previous Evolution Number: </b>${valuePrevEvolutionTwo['num']}</p>
+              <p class="paragraph-big"><b>Previous Evolution Name: </b>${valuePrevEvolutionTwo['name']}</p>
+              <p class="paragraph-big"><b>Previous Evolution Candy cost: </b>${valuePrevEvolutionTwo['candy-cost']}</p>
             </div>`
           )
           if (valuePrevEvolutionTwo["evolution-item"]) {
