@@ -37,17 +37,15 @@ inputSearch.addEventListener("change", () => {
   selectOrder.value = 'none'
   filterTypes.value = 'filter'
   for (let i = 0; i < inputSearch.value.length; i++) {
-    const charCode = inputSearch.value.charCodeAt(i)
-    if ((charCode > 64 && charCode < 91) || (charCode > 96 && charCode < 123)) {
-      arrPokemon = typeName(data.pokemon, inputSearch.value)
-      if (arrPokemon.length == 0) {
-        cardSmall.textContent = "Not found! Verify the name and try again."
-      }
-      else {
-        smallCardPokemon(arrPokemon, cardSmall)
-      }
+    arrPokemon = typeName(data.pokemon, inputSearch.value)
+    if (arrPokemon.length == 0) {
+      cardSmall.textContent = "Not found! Verify the name and try again."
+    }
+    else {
+      smallCardPokemon(arrPokemon, cardSmall)
     }
   }
+
   if (inputSearch.value == "") {
     arrPokemon = []
     arrPokemonOrder = []

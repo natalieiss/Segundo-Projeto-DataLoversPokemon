@@ -1,6 +1,4 @@
-
-import { it } from 'eslint/lib/rule-tester/rule-tester';
-import { orderData, filterByType, typeName, createPropertyArr, createArrWithoutRepeat, percentOfProperty, showSumArr } from '../src/data.js';
+import { orderData, filterByType, typeName, createPropertyArr, createArrWithoutRepeat, percentOfProperty, showSumArr } from '../src/js/data.js';
 
 const arrTest0 = ["fire", "fire", "fire", "grass", "grass", "water"]
 const arrTestName = [{
@@ -96,10 +94,6 @@ const arrTest1 = [
 ]
 
 describe('orderData', () => {
-  it('orderData is a function', () => {
-    expect(typeof orderData).toBe('function');
-  });
-
   it('should return "[mewtwo, ninetales, bulbasaur]" for "max-smaller-cp" with array arrTest', () => {
     expect(orderData(arrTest, 'max-smaller-cp')).toStrictEqual([
       {
@@ -495,9 +489,9 @@ describe('orderData', () => {
         "ice",
         "flying",
         "psychic"
-      ]
-    })
-  });
+      ],
+    });
+  })
 })
 
 const onePokemon = {
@@ -523,31 +517,8 @@ const onePokemon = {
 }
 
 describe('filterByType', () => {
-  it('is a function', () => {
-    expect(typeof filterByType).toBe('function')
-  })
   it('should return [ninetales] for arrTest with fire', () => {
-    expect(filterByType(arrTest, 'fire')).toEqual([{
-      "num": "038",
-      "name": "ninetales",
-      "pokemon-rarity": "normal",
-      "type": [
-        "fire"
-      ],
-      "spawn-chance": "0.0077",
-      "stats": {
-        "base-attack": "169",
-        "base-defense": "190",
-        "base-stamina": "177",
-        "max-cp": "2279",
-        "max-hp": "151"
-      },
-      "weaknesses": [
-        "water",
-        "ground",
-        "rock"
-      ],
-    }]);
+    expect(filterByType(arrTest, 'fire')).toEqual([onePokemon]);
   });
   it('Should return "[]" for arrTest with ""', () => {
     expect(filterByType(arrTest, "")).toEqual([])
@@ -555,10 +526,6 @@ describe('filterByType', () => {
 })
 
 describe("typeName", () => {
-  it('is a function', () => {
-    expect(typeof typeName).toBe('function')
-  })
-
   it('Should return "bulbasaur" for arrTest with "bul"', () => {
     expect(typeName(arrTest, "bul")).toEqual([{
       "num": "001",
@@ -581,35 +548,24 @@ describe("typeName", () => {
         "ice",
         "flying",
         "psychic"
-      ]
+      ],
     }])
   });
 })
 
 describe("createPropertyArr", () => {
-  it('is a function', () => {
-    expect(typeof createPropertyArr).toBe('function')
-  })
-
   it('Should return "["grass", "poison", "psychic", "fire"]" for arrTest with "type"', () => {
     expect(createPropertyArr(arrTest, "type")).toEqual(["fire", "psychic", "grass", "poison",])
   })
 })
 
 describe("createArrWithoutRepeat", () => {
-  it('is a function', () => {
-    expect(typeof createArrWithoutRepeat).toBe('function')
-  })
   it('Should return "["fire", "grass", "water"]" for arrTest0', () => {
     expect(createArrWithoutRepeat(arrTest0)).toEqual(["fire", "grass", "water"])
   })
 })
 
 describe("percentOfProperty", () => {
-  it('is a function', () => {
-    expect(typeof percentOfProperty).toBe('function')
-  })
-
   it('Should return "{qtd: 1, percent: "33.33", status: "fire"}" for arrTest with ["fire", "psychic", "grass", "poison"]', () => {
     expect(percentOfProperty(["fire", "psychic", "grass", "poison"], ["fire", "psychic", "grass", "poison"], arrTest).fire).toEqual({ qtd: 1, percent: "33.33", status: "fire" })
   })
@@ -619,9 +575,6 @@ const sum = percentOfProperty(["fire", "psychic", "grass", "poison"], ["fire", "
 const sum1 = percentOfProperty(["normal", "legendary", "normal"], ["normal", "legendary"], arrTest)
 
 describe("showSumArr", () => {
-  it('is a function', () => {
-    expect(typeof showSumArr).toBe('function')
-  })
   it('Should return "{qtd: 1, percent: "33.33", status: "fire"}"', () => {
     expect(showSumArr(onePokemon, "type", sum, ["fire", "psychic", "grass", "poison"])).toEqual([{ qtd: 1, percent: "33.33", status: "fire" }])
   })
