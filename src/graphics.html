@@ -9,7 +9,7 @@
   <meta name="Author" content="Natalie Silva and Mônica Guimarães">
   <meta name="description" content="Gopedia">
   <title>Gopedia</title>
-  <link rel="stylesheet" href="./estilos/index.css" />
+  <link rel="stylesheet" href="./estilos/graphics.css" />
 </head>
 
 <body class="body">
@@ -18,9 +18,6 @@
       <a id="logo" href="index.html" class="link"><img alt="GOPEDIA" src="./img/logo.png" class="img-header"></a>
       <img src="./img/pikachugif.gif" alt="running pikachu" class="img-pikachu" width="80" />
     </div>
-    <section class="section-pokeball">
-      <img src="./img/pokeballbutton.png" width="70" height="70" />
-    </section>
     <nav id="nav-options" class="nav-options" aria-expanded="false">
       <button id="btn-mobile" class="btn-mobile">
         <span id="hamburguer" class="hamburguer"></span>
@@ -35,32 +32,16 @@
       </ul>
     </nav>
   </header>
-  <div class="container-main">
-    <main id="main" class="main">
-      <div class="content">
-        <section class="section-oak">
-          <img src="./img/professor.png" alt="oak" width="60%">
-        </section>
-        <section class="section-btn-content">
-          <div class="div-talk">
-            <p class="p-space">
-              Welcome trainers, to the world of Pokémon. This world is
-              widely inhabited by creatures known as Pokémon.
-              We humans live alongside Pokémon as friends.
-              As time we play together, and at other times we work together.
-            </p>
-            <p class="p-space">
-              Here's a Pokédex that might
-              come in handy on your journey!
-            </p>
-            <p class="p-space">
-              Just click on it!
-            </p>
-          </div>
-          <button class="pokedex btn" onclick="window.location.href = 'pokedex.html'"><img
-              src="./img/pokedexfavicon.png" alt="POKEDEX" height="50vh" /></button>
-        </section>
-      </div>
+  <div>
+    <main>
+      <section>
+        <h1>Statistics</h1>
+        <p>Curious about the percentage of Pokemon in general?</p>
+        <p>See some graphs below:</p>
+        <canvas>
+
+        </canvas>
+      </section>
     </main>
     <footer class="baseboard">
       <p>Developed by Natalie I. S. Santos
@@ -69,13 +50,14 @@
         </a>and Mônica Guimarães<a href="https://github.com/MonicaGuimaraes" target="_blank">
           <strong class="github"><img src="./img/github.png" alt="imagemgit" class="img-git" width="25" /></strong>
           <!--<div> Ícones feitos por <a href="https://www.flaticon.com/br/autores/pixel-perfect" title="Pixel perfect">
-              Pixel perfect </a> from <a href="https://www.flaticon.com/br/" title="Flaticon">www.flaticon.com'</a>*/
-          </div>-->
+            Pixel perfect </a> from <a href="https://www.flaticon.com/br/" title="Flaticon">www.flaticon.com'</a>*/
+        </div>-->
         </a>
       </p>
     </footer>
   </div>
-  <script src="./js/index.js" type="module"></script>
+  <script src="./js/graphics.js" type="module"></script>
+  <script src=""></script>
 </body>
 
 </html>

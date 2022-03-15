@@ -1,4 +1,5 @@
-import data from './data/pokemon/pokemon.js'
+import './nav.js'
+import data from '../data/pokemon/pokemon.js'
 import {
   apearBigCardPokemon,
   optionTypesHtml,
@@ -16,7 +17,6 @@ import {
 } from "./data.js"
 
 const pokemon = data.pokemon
-const btnMobile = document.getElementById('btn-mobile')
 const selectOrder = document.querySelector('#select-order')
 const inputSearch = document.getElementById('input-search')
 
@@ -26,13 +26,6 @@ let cardSmall = document.getElementById('card-pokemon')
 let showPokemonBig = document.getElementById('card-pokemon-big')
 
 optionTypesHtml(pokemon, filterTypes)
-
-function toggleMenu() {
-  const nav = document.getElementById('nav-options')
-  nav.classList.toggle('active')
-}
-
-btnMobile.addEventListener("click", toggleMenu)
 
 smallCardPokemon(pokemon, cardSmall)
 
@@ -114,6 +107,11 @@ sectionCardsPokemon.addEventListener("click", (e) => {
     const sum = percentOfProperty(arrWithAllStatus, arrWithoutRepeat, pokemon)
     const sumProperty = showSumArr(onePokemon, "type", sum, arrWithoutRepeat)
 
+    const arrWithAllStatusRarity = createPropertyArr(pokemon, "pokemon-rarity")
+    const arrWithoutRepeatRarity = createArrWithoutRepeat(arrWithAllStatus)
+    const sumRarity = percentOfProperty(arrWithAllStatusRarity, arrWithoutRepeatRarity, pokemon)
+    const sumPropertyRarity = showSumArr(onePokemon, "pokemon-rarity", sumRarity, arrWithoutRepeatRarity)
+
     for (let line of sumProperty) {
       showPokemonBig.insertAdjacentHTML('beforeend', `
       <div class="pattern">
@@ -122,6 +120,16 @@ sectionCardsPokemon.addEventListener("click", (e) => {
       </div>`
       )
     }
+
+    for (let line of sumPropertyRarity) {
+      showPokemonBig.insertAdjacentHTML('beforeend', `
+      <div class="pattern">
+        <p class="paragraph-big"><b>Number of ${line.status} pokemons: ${line.qtd}</b></p>
+        <p class="paragraph-big"><b>Percentage of ${line.status} pokemons: ${line.percent}%</b></p>
+      </div>`
+      )
+    }
+
   }
   if (extensionW <= 600) {
     window.scrollTo(0, 1000)

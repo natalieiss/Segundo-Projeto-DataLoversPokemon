@@ -21,7 +21,7 @@ O Projeto Data-Lovers da Laboratória propõe criar uma interface e trabalhar co
 
 # Resumo do Projeto
 <p align="center">
-<img src="./readmeimg/gengar.jpg" alt="Protótipo de alta fidelidade" width="300">
+<img src="./docs/img/gengar.jpg" alt="Protótipo de alta fidelidade" width="300">
 </p>
 No nosso segundo projeto, denominado data-lovers, tivemos a chance de escolher o tema de dados que iriamos trabalhar e optamos por um projeto baseado em Pokemon em razão de grande afinidade.
 
@@ -44,7 +44,7 @@ Criamos também protótipos e nos organizamos através do aplicativo web Trello.
 
 ## Usuário
 <p align="center">
-<img src="./readmeimg/threepokemons.png" alt="pokemon" width="300">
+<img src="./docs/img/threepokemons.png" alt="pokemon" width="300">
 
 O universo pokémon foi criado em 1995 e, ainda atualmente, é visto como uma "febre mundial" que cresceu ainda mais com a criação da franquia de Pokémon Go, responsável por trazer o mundo dos monstrinhos para a interface dos dispositivos móveis ampliando ainda mais o público alvo.
 
@@ -54,27 +54,27 @@ As histórias de usuário ja encontravam-se pré definidas e disponibilizadas no
 
 <b>História de Usuário 1 -</b> "Os Pokémons têm características únicas que determinam as decisões tomadas pelo usuário (tipo, fraqueza, peso, multiplicador, etc.)."
 <p align="center">
-<img src="./readmeimg/1historiadeusuario.png" alt="usuários" width="700">
+<img src="./docs/img/1historiadeusuario.png" alt="usuários" width="700">
 </p>
 
 <b>História de Usuário 2 - "Um mestre Pokémon antes de sair para caçar os Pokémons tem que conhecer os 10 principais Pokémons que aparecem com mais frequência."
 <p align="center">
-<img src="./readmeimg/2historiadeusuario.png" alt="usuários" width="700">
+<img src="./docs/img/2historiadeusuario.png" alt="usuários" width="700">
 </p>
 
 <b>História de Usuário 3 -</b> "Os Pokémons têm diferentes tipos e fraquezas em combate. Estas características são importantes na escolha do Pokémon mais adequado para sua batalha. Às vezes, você tem que escolher aqueles com menos fraquezas e saber de que tipo eles são. Portanto, é importante que um mestre de Pokémon seja capaz de ordená-los por essas 2 características."
 <p align="center">
-<img src="./readmeimg/3historiadeusuario.png" alt="usuários" width="700">
+<img src="./docs/img/3historiadeusuario.png" alt="usuários" width="700">
 </p>
 
 <b>História de Usuário 4 -</b> "Os Pokémons evoluem e é importante para um mestre Pokémon saber quantas e quais evoluções eles têm antes e depois."
 <p align="center">
-<img src="./readmeimg/4historiadeusuario.png" alt="usuários" width="700">
+<img src="./docs/img/4historiadeusuario.png" alt="usuários" width="700">
 </p>
 
 <b>História de Usuário 5 -</b> "Pokémons comem candies e um mestre Pokémon precisa saber quantos candies um Pokémon precisa para evoluir."
 <p align="center">
-<img src="./readmeimg/5historiadeusuario.png" alt="usuários" width="700">
+<img src="./docs/img/5historiadeusuario.png" alt="usuários" width="700">
 </p>
 
 <b>História de Usuário 6 (de autoria das desenvolvedoras) -</b> "Filtragem pelos tipos dos pokémons (fire, grass, electric, flying, steel, water, psychic, ghost, poison, bug, normal, rock, ice, dragon, dark e fairy)
@@ -99,30 +99,30 @@ Favicon.
 
 Página 1, protótipo de baixa fidelidade.
 <p align="center">
-<img src="./readmeimg/prototipodebaixa.jpg" alt="Protótipo de baixa fidelidade" width="700">
+<img src="./docs/img/prototipodebaixa.jpg" alt="Protótipo de baixa fidelidade" width="700">
 </p>
 
 Página 2, protótipo de baixa fidelidade.
 <p align="center">
-<img src="./readmeimg/prototipoabaixa2.png" alt="Protótipo de baixa fidelidade" width="700">
+<img src="./docs/img/prototipoabaixa2.png" alt="Protótipo de baixa fidelidade" width="700">
 </p>
 
 Página 1, protótipo de alta fidelidade.
 <p align="center">
-<img src="./readmeimg/Group3.png" alt="Protótipo de alta fidelidade" width="700">
+<img src="./docs/img/Group3.png" alt="Protótipo de alta fidelidade" width="700">
 </p>
 
 Página 2, protótipo de alta fidelidade.
 <p align="center">
-<img src="./readmeimg/Group4.png" alt="Protótipo de alta fidelidade" width="700">
+<img src="./docs/img/Group4.png" alt="Protótipo de alta fidelidade" width="700">
 </p>
 
 Cards da página 2.
 <p align="center">
-<img src="./readmeimg/Group4(1).png" alt="Protótipo de alta fidelidade" width="400">
+<img src="./docs/img/Group4(1).png" alt="Protótipo de alta fidelidade" width="400">
 </p>
 <p align="center">
-<img src="./readmeimg/Group3(1).png" alt="Protótipo de alta fidelidade" width="200">
+<img src="./docs/img/Group3(1).png" alt="Protótipo de alta fidelidade" width="200">
 </p>
 
 Após os primeiros protótipos saírem pedimos opiniões de usuários fãs de Pokémons, a maioria relatou que os protótipos inicias estavam indo na direção certa, e indicaram o que gostariam de ver em um site relacionado ao tema:
@@ -140,43 +140,43 @@ Após o projeto finalizado, fizemos com que algumas pessoas utilizassem o app we
 # Projeto Finalizado
 
 <p align="center">
-<img src="./readmeimg/paginainicial.png" alt="ipad visualização" width="700">
+<img src="./docs/img/paginainicial.png" alt="ipad visualização" width="700">
 </p>
 
 <p align="center">
-<img src="./readmeimg/pesquisa.png" alt="ipad visualização" width="700">
+<img src="./docs/img/pesquisa.png" alt="ipad visualização" width="700">
 </p>
 
 <p align="center">
-<img src="./readmeimg/filtrarordenar.png" alt="ipad visualização" width="700">
+<img src="./docs/img/filtrarordenar.png" alt="ipad visualização" width="700">
 </p>
 
 <p align="center">
-<img src="./readmeimg/indexhtml(iPad).png" alt="ipad visualização" width="300">
+<img src="./docs/img/indexhtml(iPad).png" alt="ipad visualização" width="300">
 </p>
 
 <p align="center">
-<img src="./readmeimg/pokedexhtml(iPad)1.png" alt="ipad visualização" width="300">
+<img src="./docs/img/pokedexhtml(iPad)1.png" alt="ipad visualização" width="300">
 </p>
 
 
 <p align="center">
-<img src="./readmeimg/pokedexhtml(iPad).png" alt="ipad visualização" width="300">
+<img src="./docs/img/pokedexhtml(iPad).png" alt="ipad visualização" width="300">
 </p>
 
 <p align="center">
-<img src="./readmeimg/pokedexhtml(iPhone6_7_8Plus).png" alt="iPhone visualização" width="200">
+<img src="./docs/img/pokedexhtml(iPhone6_7_8Plus).png" alt="iPhone visualização" width="200">
 </p>
 
 <p align="center">
-<img src="./readmeimg/pokedexhtml(iPhone6_7_8Plus)(1).png" alt="iPhone visualização" width="200">
+<img src="./docs/img/pokedexhtml(iPhone6_7_8Plus)(1).png" alt="iPhone visualização" width="200">
 </p>
 
 
 # Testes Unitários
 Criamos os testes unitários para o arquivo data.js. Este é o arquivo onde as funções de filtragem, ordenação e cálculos agregados se encontram.
 
-<img src="./readmeimg/Teste.png" alt="Testes" width="500">
+<img src="./docs/img/Teste.png" alt="Testes" width="500">
 
 # Deploy
 
@@ -197,7 +197,7 @@ Acessando o endereço web (URL) o usuário já estará apto a utilizar todas as 
 - ![HTML5](https://camo.githubusercontent.com/d63d473e728e20a286d22bb2226a7bf45a2b9ac6c72c59c0e61e9730bfe4168c/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f48544d4c352d4533344632363f7374796c653d666f722d7468652d6261646765266c6f676f3d68746d6c35266c6f676f436f6c6f723d7768697465)
 - ![Jest](https://camo.githubusercontent.com/5ec7b7ed343219da6b2213349bacdc389803950b5298464b35e76f7ab6ccf27d/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4a6573742d4332313332353f7374796c653d666f722d7468652d6261646765266c6f676f3d6a657374266c6f676f436f6c6f723d7768697465)
 - ![node.js](https://camo.githubusercontent.com/a1eae878fdd3d1c1b687992ca74e5cac85f4b68e60a6efaa7bc8dc9883b71229/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4e6f64652e6a732d3333393933333f7374796c653d666f722d7468652d6261646765266c6f676f3d6e6f6465646f746a73266c6f676f436f6c6f723d7768697465)
-- ![vscode](./readmeimg/visualbotao.png)
+- ![vscode](./docs/img/visualbotao.png)
 
 # Autoras
 

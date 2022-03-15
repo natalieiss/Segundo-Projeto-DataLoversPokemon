@@ -1,8 +1,8 @@
 .baseboard{
   text-align: center;
   text-justify: center;
-  background-color: black;
-  color: white;
+  background-color: var(--black);
+  color: var(--white);
   padding-top: 10px;
   font-size: larger;
   font-family: 'architectsDaughter';
