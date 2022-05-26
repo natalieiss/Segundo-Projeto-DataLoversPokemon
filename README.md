@@ -125,7 +125,7 @@ Cards da página 2.
 <img src="./docs/img/Group3(1).png" alt="Protótipo de alta fidelidade" width="200">
 </p>
 
-Após os primeiros protótipos saírem pedimos opiniões de usuários fãs de Pokémons, a maioria relatou que os protótipos inicias estavam indo na direção certa, e indicaram o que gostariam de ver em um site relacionado ao tema:
+Após os primeiros protótipos saírem pedimos opiniões de usuários fãs de Pokémons, a maioria relatou que os protótipos iniciais estavam indo na direção certa, e indicaram o que gostariam de ver em um site relacionado ao tema:
 - Cores das pokebolas;
 - Algo mais limpo e fácil de achar os dados para o jogo.
 
