@@ -79,7 +79,7 @@ As histórias de usuário ja encontravam-se pré definidas e disponibilizadas no
 
 <b>História de Usuário 6 (de autoria das desenvolvedoras) -</b> "Filtragem pelos tipos dos pokémons (fire, grass, electric, flying, steel, water, psychic, ghost, poison, bug, normal, rock, ice, dragon, dark e fairy)
 <p align="center">
-<img src="./readmeimg/6historiadeusuario.png" alt="usuários" width="700">
+<img src="./docs/img/6historiadeusuario.png" alt="usuários" width="700">
 </p>
 
 # Logo
