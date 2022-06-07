@@ -209,3 +209,81 @@ Acessando o endereço web (URL) o usuário já estará apto a utilizar todas as 
 [Figma](https://www.figma.com/file/iv7o2sToNyL6ipwWTlEVkg/Untitled?node-id=0%3A1)
 
 [Trello](https://trello.com/b/ZA9JRYyk/projeto-2-data-lovers-pokemon)
+
+  ## Objetivos de Aprendizagem
+
+### HTML
+
+- **Uso de HTML semântico**
+  
+
+### CSS
+
+- **Uso de seletores de CSS**
+
+- **Empregar o modelo de caixa (box model): borda, margem, preenchimento**
+
+- **Uso de flexbox en CSS**
+
+### Web APIs
+
+- **Uso de seletores de DOM**
+
+- **Gerenciamento de eventos de DOM**
+  
+- **Manipulação dinâmica de DOM**
+
+### JavaScript
+
+- **Diferenciar entre tipos de dados primitivos e não primitivos**
+
+- **Manipular arrays (filter, map, sort, reduce)**
+
+- **Manipular objects (key | value)**
+
+- **Variáveis (declaração, atribuição, escopo)**
+
+- **Uso de condicionais (if-else, switch, operador ternário)**
+
+- **Uso de laços (for, for..of, while)**
+
+- **Uso de funções (parâmetros, argumentos, valor de retorno)**
+
+- **Testes unitários**
+
+- **Uso ES modules**
+
+- **Uso de linter (ESLINT)**
+
+- **Uso de identificadores descritivos (Nomenclatura | Semântica)**
+
+- **Diferença entre expression e statements**
+
+### Git e GitHub
+
+- **Git: Instalação e configuração**
+
+- **Git: Controle de versão com git (init, clone, add, commit, status, push, pull, remote)**
+
+- **Git: Integração de mudanças entre ramos (branch, checkout, fetch, merge, reset, rebase, tag)**
+
+- **GitHub: Criação de contas e repositórios, configuração de chave SSH**
+
+- **GitHub: Implantação com GitHub Pages**
+
+
+- **GitHub: Colaboração pelo Github (branches | forks | pull requests | code review | tags)**
+
+### user-centricity
+
+- **Desenhar a aplicação pensando e entendendo a usuária**
+
+### product-design
+
+- **Criar protótipos para obter feedback e iterar**
+
+- **Aplicar os princípios de desenho visual (contraste, alinhamento, hierarquia)**
+
+### research
+
+- **Planejar e executar testes de usabilidade**
