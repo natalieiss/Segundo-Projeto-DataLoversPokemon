@@ -184,7 +184,7 @@ Este projeto está disponível para utilização e visualização online atravé
 
 - [<img src="./src/img/logo.png" alt="Logo" width="350">](https://monicaguimaraes.github.io/SAP007-data-lovers/)
 
-Para utilizar este endereço web (https://monicaguimaraes.github.io/SAP007-data-lovers/) o usuário deverá ter instalado em seu dispositivo um navegador web (Google Chrome, Mozilla Firefox, Internet Explorer e outros).
+Para utilizar este endereço web (https://natalieiss.github.io/Segundo-Projeto-DataLoversPokemon/) o usuário deverá ter instalado em seu dispositivo um navegador web (Google Chrome, Mozilla Firefox, Internet Explorer e outros).
 
 Acessando o endereço web (URL) o usuário já estará apto a utilizar todas as funcionalidades disponíveis.
 
