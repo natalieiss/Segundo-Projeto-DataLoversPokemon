@@ -1,8 +1,9 @@
 @import url(./header.css);
 @import url(./footer.css);
+@import url(./reset.css);
 
 .body{
-  background: black;
+  background: var(--black);
   font-family: 'architectsDaughter';
   font-weight: bold;
   font-size: larger;
