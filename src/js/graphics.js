@@ -5,29 +5,70 @@ import {
 } from "./data.js"
 import './nav.js'
 
-const btnMobile = document.getElementById('btn-mobile')
-
-function toggleMenu() {
-  const nav = document.getElementById('nav-options')
-  nav.classList.toggle('active')
-}
-
-btnMobile.addEventListener("click", toggleMenu)
-
-let arrResponse
-let arrResponse1
 async function catchData() {
-  arrResponse = await fetch("./data/pokemon/pokemon.json")
-  arrResponse1 = await arrResponse.json()
-  console.log(arrResponse, arrResponse1, arrResponse1.pokemon)
+  const arrResponse = await fetch("./data/pokemon/pokemon.json")
+  const arrResponse1 = await arrResponse.json()
   return await arrResponse1.pokemon
 }
 
-async function graphics() {
-  let pokemon = await catchData()
-  const propertyArr = createPropertyArr(pokemon, "type")
-  const arrWithoutRepeat = createArrWithoutRepeat(propertyArr)
-  percentOfProperty(propertyArr, arrWithoutRepeat,)
+function generateColor() {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
 
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+
+  return color;
 }
-graphics()
+
+async function graphics(featurePokemon, element) {
+  try {
+    const pokemon = await catchData()
+    const propertyArrfeature = createPropertyArr(pokemon, featurePokemon)
+    const arrWithoutRepeatfeature = createArrWithoutRepeat(propertyArrfeature)
+    const statusDatafeature = percentOfProperty(propertyArrfeature, arrWithoutRepeatfeature, pokemon)
+
+    let arrLabels = []
+    let arrColors = []
+    let arrQtd = []
+
+    for (let statusfeature in statusDatafeature) {
+      arrLabels.push(statusDatafeature[statusfeature].status)
+      arrColors.push(generateColor())
+      arrQtd.push(statusDatafeature[statusfeature].qtd)
+    }
+
+    const data = {
+      labels: arrLabels,
+      datasets: [{
+        label: `${featurePokemon} Pokémon`,
+        data: arrQtd,
+        backgroundColor: arrColors,
+        hoverOffset: 4
+      }]
+    };
+
+    const config = {
+      type: 'pie',
+      data: data,
+      options: {
+        title: {
+          display: true,
+          text: `Number of Pokémon ${featurePokemon}`
+        }
+      }
+    }
+
+    new Chart(
+      element,
+      config
+    )
+  }
+  catch (e) {
+    document.getElementById('error').textContent = 'An error occurred, please try later!'
+  }
+}
+
+graphics('type', document.getElementById('myChart').getContext('2d'))
+graphics('pokemon-rarity', document.getElementById('myChart2').getContext('2d'))
