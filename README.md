@@ -172,6 +172,20 @@ Após o projeto finalizado, fizemos com que algumas pessoas utilizassem o app we
 <img src="./docs/img/pokedexhtml(iPhone6_7_8Plus)(1).png" alt="iPhone visualização" width="200">
 </p>
 
+<p>Demonstrações:</p>
+<p align="center">Versão Web</p>
+<p align="center">
+  <img width="400" height="200" src="./src/assets/readme/teste1.gif"/>
+</p>
+<p align="center">Versão Tablet</p>
+<p align="center">
+  <img width="400" height="300" src="./src/assets/readme/tablet1.gif"/>
+  <img width="200" height="300" src="./src/assets/readme/tablet2.gif"/>
+</p>
+<p align="center">Versão Mobile</p>
+<p align="center">
+  <img width="205" height="320" src="./src/assets/readme/mobile.gif"/>
+</p>
 
 # Testes Unitários
 Criamos os testes unitários para o arquivo data.js. Este é o arquivo onde as funções de filtragem, ordenação e cálculos agregados se encontram.
