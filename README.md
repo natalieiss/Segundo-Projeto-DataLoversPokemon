@@ -79,7 +79,7 @@ As histórias de usuário ja encontravam-se pré definidas e disponibilizadas no
 
 <b>História de Usuário 6 (de autoria das desenvolvedoras) -</b> "Filtragem pelos tipos dos pokémons (fire, grass, electric, flying, steel, water, psychic, ghost, poison, bug, normal, rock, ice, dragon, dark e fairy)
 <p align="center">
-<img src="./readmeimg/6historiadeusuario.png" alt="usuários" width="700">
+<img src="./docs/img/6historiadeusuario.png" alt="usuários" width="700">
 </p>
 
 # Logo
@@ -125,7 +125,7 @@ Cards da página 2.
 <img src="./docs/img/Group3(1).png" alt="Protótipo de alta fidelidade" width="200">
 </p>
 
-Após os primeiros protótipos saírem pedimos opiniões de usuários fãs de Pokémons, a maioria relatou que os protótipos inicias estavam indo na direção certa, e indicaram o que gostariam de ver em um site relacionado ao tema:
+Após os primeiros protótipos saírem pedimos opiniões de usuários fãs de Pokémons, a maioria relatou que os protótipos iniciais estavam indo na direção certa, e indicaram o que gostariam de ver em um site relacionado ao tema:
 - Cores das pokebolas;
 - Algo mais limpo e fácil de achar os dados para o jogo.
 
@@ -209,8 +209,8 @@ Acessando o endereço web (URL) o usuário já estará apto a utilizar todas as 
 - ![js](https://camo.githubusercontent.com/9d07c04bdd98c662d5df9d4e1cc1de8446ffeaebca330feb161f1fb8e1188204/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4a6176615363726970742d4637444631453f7374796c653d666f722d7468652d6261646765266c6f676f3d6a617661736372697074266c6f676f436f6c6f723d626c61636b)
 - ![CSS3](https://camo.githubusercontent.com/3a0f693cfa032ea4404e8e02d485599bd0d192282b921026e89d271aaa3d7565/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f435353332d3135373242363f7374796c653d666f722d7468652d6261646765266c6f676f3d63737333266c6f676f436f6c6f723d7768697465)
 - ![HTML5](https://camo.githubusercontent.com/d63d473e728e20a286d22bb2226a7bf45a2b9ac6c72c59c0e61e9730bfe4168c/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f48544d4c352d4533344632363f7374796c653d666f722d7468652d6261646765266c6f676f3d68746d6c35266c6f676f436f6c6f723d7768697465)
-- ![Jest](https://camo.githubusercontent.com/5ec7b7ed343219da6b2213349bacdc389803950b5298464b35e76f7ab6ccf27d/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4a6573742d4332313332353f7374796c653d666f722d7468652d6261646765266c6f676f3d6a657374266c6f676f436f6c6f723d7768697465)
 - ![node.js](https://camo.githubusercontent.com/a1eae878fdd3d1c1b687992ca74e5cac85f4b68e60a6efaa7bc8dc9883b71229/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4e6f64652e6a732d3333393933333f7374796c653d666f722d7468652d6261646765266c6f676f3d6e6f6465646f746a73266c6f676f436f6c6f723d7768697465)
+- ![Jest](https://camo.githubusercontent.com/5ec7b7ed343219da6b2213349bacdc389803950b5298464b35e76f7ab6ccf27d/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4a6573742d4332313332353f7374796c653d666f722d7468652d6261646765266c6f676f3d6a657374266c6f676f436f6c6f723d7768697465)
 - ![vscode](./docs/img/visualbotao.png)
 
 # Autoras
@@ -223,3 +223,81 @@ Acessando o endereço web (URL) o usuário já estará apto a utilizar todas as 
 [Figma](https://www.figma.com/file/iv7o2sToNyL6ipwWTlEVkg/Untitled?node-id=0%3A1)
 
 [Trello](https://trello.com/b/ZA9JRYyk/projeto-2-data-lovers-pokemon)
+
+  ## Objetivos de Aprendizagem
+
+### HTML
+
+- **Uso de HTML semântico**
+  
+
+### CSS
+
+- **Uso de seletores de CSS**
+
+- **Empregar o modelo de caixa (box model): borda, margem, preenchimento**
+
+- **Uso de flexbox en CSS**
+
+### Web APIs
+
+- **Uso de seletores de DOM**
+
+- **Gerenciamento de eventos de DOM**
+  
+- **Manipulação dinâmica de DOM**
+
+### JavaScript
+
+- **Diferenciar entre tipos de dados primitivos e não primitivos**
+
+- **Manipular arrays (filter, map, sort, reduce)**
+
+- **Manipular objects (key | value)**
+
+- **Variáveis (declaração, atribuição, escopo)**
+
+- **Uso de condicionais (if-else, switch, operador ternário)**
+
+- **Uso de laços (for, for..of, while)**
+
+- **Uso de funções (parâmetros, argumentos, valor de retorno)**
+
+- **Testes unitários**
+
+- **Uso ES modules**
+
+- **Uso de linter (ESLINT)**
+
+- **Uso de identificadores descritivos (Nomenclatura | Semântica)**
+
+- **Diferença entre expression e statements**
+
+### Git e GitHub
+
+- **Git: Instalação e configuração**
+
+- **Git: Controle de versão com git (init, clone, add, commit, status, push, pull, remote)**
+
+- **Git: Integração de mudanças entre ramos (branch, checkout, fetch, merge, reset, rebase, tag)**
+
+- **GitHub: Criação de contas e repositórios, configuração de chave SSH**
+
+- **GitHub: Implantação com GitHub Pages**
+
+
+- **GitHub: Colaboração pelo Github (branches | forks | pull requests | code review | tags)**
+
+### user-centricity
+
+- **Desenhar a aplicação pensando e entendendo a usuária**
+
+### product-design
+
+- **Criar protótipos para obter feedback e iterar**
+
+- **Aplicar os princípios de desenho visual (contraste, alinhamento, hierarquia)**
+
+### research
+
+- **Planejar e executar testes de usabilidade**
